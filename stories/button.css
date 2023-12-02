@@ -3,18 +3,18 @@
   cursor: pointer;
   font-size: 0.8125rem;
   font-weight: 700;
-  padding: 1.4375rem 0rem 1.3125rem 0rem;
   display: inline-block;
   line-height: 1;
 }
 .storybook-button--primary {
   color: #ffffff;
   background-color: #000000;
+  padding: 1.4375rem 0rem 1.3125rem 0rem;
 }
 .storybook-button--secondary {
-  color: #333;
-  background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  color: #000;
+  border: 0.0625rem solid #000000;
+  padding: 1.5625rem 2.1875rem;
 }
 .storybook-button--small {
   width: 15rem;

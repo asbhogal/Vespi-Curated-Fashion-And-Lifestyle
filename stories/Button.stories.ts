@@ -29,20 +29,20 @@ export const Primary: Story = {
   },
 };
 
-export const Secondary: Story = {
+export const General: Story = {
   args: {
-    label: "Button",
+    label: "Learn more about us",
   },
 };
 
-export const Large: Story = {
+export const Special: Story = {
   args: {
     size: "large",
-    label: "Button",
+    label: "Follow us on the gram",
   },
 };
 
-export const Small: Story = {
+/* export const Small: Story = {
   args: {
     size: "small",
     label: "Button",
@@ -55,4 +55,4 @@ export const Warning: Story = {
     label: "Delete now",
     backgroundColor: "red",
   },
-};
+}; */
