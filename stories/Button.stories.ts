@@ -25,7 +25,7 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     primary: true,
-    label: "Add to cart",
+    label: "Add to bag",
   },
 };
 
@@ -37,8 +37,8 @@ export const General: Story = {
 
 export const Special: Story = {
   args: {
-    size: "large",
     label: "Follow us on the gram",
+    icon: true,
   },
 };
 
