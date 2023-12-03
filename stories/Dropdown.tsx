@@ -18,5 +18,5 @@ export const Dropdown = ({
 }: DropdownProps) => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState();
-  return <Button>TEST</Button>;
+  return <Button className="rounded-none">TEST</Button>;
 };
