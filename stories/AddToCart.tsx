@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { z } from "zod";
 import "./dropdown.css";
 
-interface DropdownProps {
+interface AddToCartProps {
   size?: "small" | "medium" | "large";
   label: number;
   quantity: number;
@@ -15,12 +15,17 @@ interface DropdownProps {
 
 const orderQuantity: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-export const Dropdown = ({
+export const AddToCart = ({
   size = "medium",
   label,
   quantity,
   ...props
-}: DropdownProps) => {
+}: AddToCartProps) => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState<number>(1);
+  return (
+    <>
+      <p>Test</p>
+    </>
+  );
 };

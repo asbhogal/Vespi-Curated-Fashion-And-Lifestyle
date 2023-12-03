@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Dropdown } from "./Dropdown";
+import { AddToCart } from "./AddToCart";
 
 const meta = {
-  title: "Vespi/Dropdown",
-  component: Dropdown,
+  title: "Vespi/AddItemToCart",
+  component: AddToCart,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof Dropdown>;
+} satisfies Meta<typeof AddToCart>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
