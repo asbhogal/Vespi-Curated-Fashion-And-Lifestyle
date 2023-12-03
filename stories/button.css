@@ -1,10 +1,4 @@
 .storybook-button {
-  font-family: "var(--font-lato)", sans-serif;
-  letter-spacing: 0.08125rem;
-  line-height: normal;
-  cursor: pointer;
-  font-size: 0.8125rem;
-  font-weight: 400;
   height: 3.75rem;
 }
 .storybook-button--primary {

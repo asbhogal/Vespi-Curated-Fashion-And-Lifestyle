@@ -3,5 +3,11 @@
 @tailwind utilities;
 
 button {
+  font-family: "var(--font-lato)", sans-serif;
   text-transform: uppercase;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.08125rem;
+  line-height: normal;
+  cursor: pointer;
 }
