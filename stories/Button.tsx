@@ -1,4 +1,5 @@
 import "./button.css";
+import { Button } from "../components/ui/button";
 
 interface ButtonProps {
   primary?: boolean;
@@ -9,7 +10,7 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-export const Button = ({
+export const Buttons = ({
   primary = false,
   size = "medium",
   backgroundColor,
@@ -23,8 +24,11 @@ export const Button = ({
 
   const specialClass = icon && "storybook-button--special";
   return (
-    <button
+    <Button
       className={[
+        "h-[3.75rem]",
+        "rounded-none",
+        "transition",
         "storybook-button",
         `storybook-button--${size}`,
         mode,
@@ -66,6 +70,6 @@ export const Button = ({
           background-color: ${backgroundColor};
         }
       `}</style>
-    </button>
+    </Button>
   );
 };

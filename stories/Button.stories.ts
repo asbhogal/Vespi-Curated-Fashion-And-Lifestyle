@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Button } from "./Button";
+import { Buttons } from "./Button";
 
 const meta = {
   title: "Vespi/Button",
-  component: Button,
+  component: Buttons,
   parameters: {
     layout: "centered",
   },
@@ -12,7 +12,7 @@ const meta = {
   argTypes: {
     backgroundColor: { control: "color" },
   },
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof Buttons>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

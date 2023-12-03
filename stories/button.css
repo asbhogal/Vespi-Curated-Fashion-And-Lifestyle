@@ -1,20 +1,22 @@
-.storybook-button {
-  height: 3.75rem;
-}
 .storybook-button--primary {
   color: #ffffff;
   background-color: #000000;
 }
 
+.storybook-button--secondary:hover {
+  color: white;
+  background-color: black;
+}
+
 .storybook-button--primary:hover {
   color: #000000;
   background-color: #ffffff;
-  transition: 0.3s all ease-in;
   border: 0.0625rem solid #000000;
 }
 
 .storybook-button--secondary {
-  color: #000;
+  color: #000000;
+  background-color: #ffffff;
   border: 0.0625rem solid #000000;
 }
 
@@ -25,11 +27,14 @@
   padding: 0 2.2rem;
 }
 .storybook-button--small {
-  width: 15rem;
+  width: 100%;
+  padding: 0 1rem;
 }
 .storybook-button--medium {
   width: 20rem;
+  padding: 0 2rem;
 }
 .storybook-button--large {
   width: 25rem;
+  padding: 0 2rem;
 }

@@ -50,6 +50,7 @@ const config: StorybookConfig = {
       config.resolve.alias = {
         ...config.resolve.alias,
         "@/lib": path.resolve(__dirname, "../lib"),
+        "@/components": path.resolve(__dirname, "../components"),
       };
     }
     return config;
