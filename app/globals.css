@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  font-family: "var(--font-ptSerif), sans-serif";
+}
+
 button {
   font-family: "var(--font-lato)", sans-serif;
   text-transform: uppercase;
