@@ -69,7 +69,7 @@ export const AddToCartForm = ({
                   type="number"
                   placeholder="1"
                   {...field}
-                  className="rounded-none border border-black"
+                  className="rounded-none border border-black font-serif"
                 />
               </FormControl>
             </FormItem>

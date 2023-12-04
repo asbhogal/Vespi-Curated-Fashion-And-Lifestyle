@@ -17,7 +17,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["var(--font-lato)"],
-        serif: ["var(--font-ptSerif)"],
+        serif: ["var(--font-pt_serif)"],
       },
       keyframes: {
         "accordion-down": {

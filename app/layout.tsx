@@ -10,10 +10,10 @@ const lato = Lato({
   display: "swap",
 });
 
-const ptSerif = PT_Serif({
+const pt_serif = PT_Serif({
   weight: ["400", "700"],
   subsets: ["latin"],
-  variable: "--font-ptSerif",
+  variable: "--font-pt_serif",
   display: "swap",
 });
 
@@ -34,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${lato.variable} ${ptSerif.variable}`}>
+    <html lang="en" className={`${lato.variable} ${pt_serif.variable}`}>
       <body>{children}</body>
     </html>
   );
