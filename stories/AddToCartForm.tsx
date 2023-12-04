@@ -1,18 +1,13 @@
 "use client";
 
-import { useState } from "react";
-import { IoMdCheckmark } from "react-icons/io";
-import { IoChevronDownSharp } from "react-icons/io5";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import * as z from "zod";
@@ -66,15 +61,16 @@ export const AddToCartForm = ({
               <FormLabel>Choose Quantity</FormLabel>
               <FormControl>
                 <Input
+                  className="rounded-none border border-black font-serif"
                   type="number"
                   placeholder="1"
                   {...field}
-                  className="rounded-none border border-black font-serif"
                 />
               </FormControl>
             </FormItem>
           )}
         />
+        <Button>Add To Cart</Button>
       </form>
     </Form>
   );

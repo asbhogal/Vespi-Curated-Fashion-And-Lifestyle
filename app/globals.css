@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: "var(--font-ptSerif), sans-serif" !important;
+html {
+  font-family: "var(--font-pt_serif)", sans-serif;
 }
 
 button {
