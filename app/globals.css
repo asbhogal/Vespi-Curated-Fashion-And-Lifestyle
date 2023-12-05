@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  outline: 0.0625rem solid red;
+}
+
 html {
   font-family: "var(--font-pt_serif)", sans-serif;
 }
