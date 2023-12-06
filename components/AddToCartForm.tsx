@@ -31,8 +31,6 @@ const formSchema = z.object({
     .max(10),
 });
 
-const orderQuantity: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
 export const AddToCartForm = ({
   size = "medium",
   label,
@@ -49,6 +47,7 @@ export const AddToCartForm = ({
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
   }
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
