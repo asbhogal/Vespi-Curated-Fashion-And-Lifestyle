@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { AddToCartForm } from "./AddToCartForm";
+import { AddToCartForm } from "../components/AddToCartForm";
 
 const meta = {
   title: "Vespi/AddItemToCart",

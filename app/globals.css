@@ -10,6 +10,13 @@ html {
   font-family: "var(--font-pt_serif)", serif;
 }
 
+.heading-2 {
+  font-family: "var(--font-pt_serif)", serif;
+  font-size: clamp(2.5rem, 2rem + 2.5vw, 6rem);
+  line-height: 1.1;
+  margin-bottom: 1.1rem;
+}
+
 button {
   font-family: "var(--font-lato)", sans-serif;
   text-transform: uppercase;
@@ -18,11 +25,4 @@ button {
   line-height: normal;
   cursor: pointer;
   height: 3.75rem;
-}
-
-.heading-2 {
-  font-family: "var(--font-pt_serif)", serif;
-  font-size: clamp(2.5rem, 2rem + 2.5vw, 6rem);
-  line-height: 1.1;
-  margin-bottom: 1.1rem;
 }

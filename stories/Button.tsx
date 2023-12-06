@@ -1,5 +1,6 @@
 import "./button.css";
 import { Button } from "../components/ui/button";
+import { lato } from "@/lib/types";
 
 interface ButtonProps {
   primary?: boolean;
@@ -33,6 +34,7 @@ export const Buttons = ({
         `storybook-button--${size}`,
         mode,
         specialClass,
+        lato.className,
       ].join(" ")}
       {...props}
     >

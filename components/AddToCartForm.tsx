@@ -1,5 +1,5 @@
 "use client";
-
+import { lato, pt_serif } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,10 +11,9 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import * as z from "zod";
-import "./addtocart.css";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Buttons } from "./Button";
+import { Buttons } from "../stories/Button";
 
 interface AddToCartProps {
   size?: "small" | "medium" | "large";
@@ -58,10 +57,15 @@ export const AddToCartForm = ({
           name="quantity"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Choose Quantity</FormLabel>
+              <FormLabel className={pt_serif.className}>
+                Choose Quantity
+              </FormLabel>
               <FormControl>
                 <Input
-                  className="rounded-none border border-black font-serif"
+                  className={[
+                    "rounded-none border border-black",
+                    pt_serif.className,
+                  ].join(" ")}
                   type="number"
                   placeholder="1"
                   {...field}
@@ -70,7 +74,7 @@ export const AddToCartForm = ({
             </FormItem>
           )}
         />
-        <Button>Add To Cart</Button>
+        <Buttons primary label="Add To Bag" />
       </form>
     </Form>
   );
