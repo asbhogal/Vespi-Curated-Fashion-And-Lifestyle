@@ -5,8 +5,24 @@ import "@splidejs/react-splide/css";
 
 // @ts-ignore - temporarily added to ignore missing declarations file
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [direction, setDirection] = useState("");
+
+  useEffect(() => {
+    function handleResize() {
+      const newDirection = window.innerWidth < 768 ? "ltr" : "ttb";
+      setDirection(newDirection);
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <Splide
@@ -16,19 +32,19 @@ export default function Home() {
           // autoplay: true,
           arrows: false,
           height: "100dvh",
-          direction: "ttb",
-          paginationDirection: "ttb",
+          direction: direction,
+          paginationDirection: direction,
           wheel: true,
         }}
       >
         <SplideSlide className="grid grid-rows-1 md:grid-cols-2 items-stretch justify-items-center md:justify-items-start">
           <div className="max-w-[28rem] w-full flex flex-col items-center text-center md:text-left justify-center md:justify-end order-2 md:order-1 py-6 md:h-[100vh] md:pl-16 p-6">
-            <p className="uppercase font-serif text-[0.8125rem]">
+            <p className="uppercase font-serif text-[0.8125rem] mb-4">
               Sebastian <span className="font-sans mx-3">&times;</span>Takagawa
             </p>
             <h2 className="heading-2">Elegance & Comfort</h2>
-            <div className="flex flex-col items-center md:items-start">
-              <p className="font-serif text-[#6a6161] mb-10">
+            <div className="flex flex-col items-center md:items-start gap-5 md:gap-10">
+              <p className="font-serif text-[#6a6161]">
                 Our new range of overcoats made from 100%
                 <span className="italic">&#32; cashmere</span>, ethically
                 sourced and without the price tag of old fashion houses.

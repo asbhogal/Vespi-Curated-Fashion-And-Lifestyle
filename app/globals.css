@@ -6,6 +6,10 @@
   outline: 0.0625rem solid red;
 }
 
+/* .splide__pagination--ltr {
+  transform: translateY(-2000%);
+} */
+
 html {
   font-family: "var(--font-pt_serif)", serif;
 }
