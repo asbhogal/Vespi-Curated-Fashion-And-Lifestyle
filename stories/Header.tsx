@@ -3,6 +3,7 @@
 import "./header.css";
 import Link from "next/link";
 import { lato } from "@/lib/types";
+import { Button } from "@/components/ui/button";
 
 type Status = {
   status: string;
@@ -53,7 +54,7 @@ export const Header = ({
   onCreateAccount,
 }: HeaderProps) => {
   return (
-    <header className="flex justify-between py-6 px-20 border border-b-slate-300">
+    <header className="flex items-center justify-between py-6 px-20 border border-b-slate-300">
       <div className="flex header-left">
         <svg
           width="64" // adjusted value directly - will review
@@ -74,7 +75,10 @@ export const Header = ({
             {menu.map((menu) => (
               <li key={menu.label}>
                 <Link
-                  className={["capitalize", lato.className].join(" ")}
+                  className={[
+                    "border border-transparent hover:border-black hover:border p-2 transition",
+                    lato.className,
+                  ].join(" ")}
                   href={menu.href}
                 >
                   {menu.label}
@@ -84,30 +88,32 @@ export const Header = ({
           </ul>
         </nav>
       </div>
-      <div className="flex items-center header-right">
-        <svg
-          width="15"
-          height="17"
-          viewBox="0 0 15 17"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle
-            cx="6.5"
-            cy="7.5"
-            r="5.75"
-            stroke="black"
-            stroke-width="1.5"
-          />
-          <line
-            y1="-0.75"
-            x2="5.21116"
-            y2="-0.75"
-            transform="matrix(0.697461 0.716622 -0.697461 0.716622 10 13)"
-            stroke="black"
-            stroke-width="1.5"
-          />
-        </svg>
+      <div className="flex items-center gap-8 header-right">
+        <Button className="bg-transparent hover:bg-transparent">
+          <svg
+            width="15"
+            height="17"
+            viewBox="0 0 15 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="6.5"
+              cy="7.5"
+              r="5.75"
+              stroke="black"
+              stroke-width="1.5"
+            />
+            <line
+              y1="-0.75"
+              x2="5.21116"
+              y2="-0.75"
+              transform="matrix(0.697461 0.716622 -0.697461 0.716622 10 13)"
+              stroke="black"
+              stroke-width="1.5"
+            />
+          </svg>
+        </Button>
         <svg
           width="1"
           height="21"
@@ -137,6 +143,14 @@ export const Header = ({
             </Link>
           </>
         )}
+        <Button
+          className={[
+            "bg-[#f1eadc] text-black font-bold hover:bg-black hover:text-white rounded-full h-12 w-12 p-8",
+            lato.className,
+          ].join("")}
+        >
+          1
+        </Button>
       </div>
     </header>
   );
