@@ -89,8 +89,16 @@ export const Header = ({
         </nav>
       </div>
       <div className="flex items-center gap-8 header-right">
-        <Button className="bg-transparent hover:bg-transparent">
+        <Button
+          className="search bg-transparent hover:bg-transparent"
+          aria-labelledby="search-label"
+        >
+          <span id="search-label" hidden>
+            Search
+          </span>
           <svg
+            aria-hidden="true"
+            focusable="false"
             width="15"
             height="17"
             viewBox="0 0 15 17"
