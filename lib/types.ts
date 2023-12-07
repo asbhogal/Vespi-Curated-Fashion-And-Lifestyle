@@ -19,7 +19,7 @@ export const chakra_petch = Chakra_Petch({
 });
 
 export const lato = Lato({
-  weight: ["700"],
+  weight: ["400", "700"],
   subsets: ["latin"],
   variable: "--font-lato",
   display: "swap",
