@@ -10,6 +10,16 @@
   transform: translateY(-2000%);
 } */
 
+.splide__pagination__page {
+  background-color: #c4c4c4 !important;
+  opacity: 1 !important;
+}
+
+.splide__pagination__page.is-active {
+  background-color: #000000 !important;
+  transform: none !important;
+}
+
 html {
   font-family: "var(--font-pt_serif)", serif;
 }
