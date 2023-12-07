@@ -31,6 +31,10 @@ html {
   margin-bottom: 1.1rem;
 }
 
+.text-antonio {
+  font-size: clamp(2.75rem, 1.1071rem + 8.2143vw, 14.25rem);
+}
+
 button {
   font-family: "var(--font-lato)", sans-serif;
   text-transform: uppercase;

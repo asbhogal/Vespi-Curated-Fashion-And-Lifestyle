@@ -6,6 +6,7 @@ import "@splidejs/react-splide/css";
 // @ts-ignore - temporarily added to ignore missing declarations file
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { useEffect, useState } from "react";
+import { antonio, chakra_petch, roboto_condensed, unna } from "@/lib/types";
 
 export default function Home() {
   const [direction, setDirection] = useState("");
@@ -108,7 +109,12 @@ export default function Home() {
         </SplideSlide>
         <SplideSlide className="grid grid-rows-1 md:grid-cols-2 items-stretch justify-items-center md:justify-items-start">
           <div className="max-w-[28rem] w-full flex flex-col items-center md:items-start text-center md:text-left justify-center md:justify-end order-2 md:order-1 py-6 md:h-[100vh] md:pl-16 p-6">
-            <h2 className="heading-2 md:relative md:top-[-15%]">
+            <h2
+              className={[
+                "heading-2 md:relative md:top-[-15%] tracking-tight",
+                unna.className,
+              ].join(" ")}
+            >
               Womens Spring Range
             </h2>
             <div className="flex flex-col items-center md:items-start gap-5 md:gap-10">
@@ -176,7 +182,12 @@ export default function Home() {
         </SplideSlide>
         <SplideSlide className="grid grid-rows-1 md:grid-cols-2 items-stretch justify-items-center md:justify-items-start">
           <div className="max-w-[28rem] w-full flex flex-col items-center md:items-start text-center md:text-left justify-center md:justify-end order-2 md:order-1 py-6 md:h-[100vh] md:pl-16 p-6">
-            <h2 className="heading-2 md:relative md:top-[-15%]">
+            <h2
+              className={[
+                "heading-2 md:relative md:top-[-15%] uppercase",
+                chakra_petch.className,
+              ].join(" ")}
+            >
               Winter Warmers
             </h2>
             <div className="flex flex-col items-center md:items-start gap-5 md:gap-10">
@@ -244,7 +255,12 @@ export default function Home() {
         </SplideSlide>
         <SplideSlide className="grid grid-rows-1 md:grid-cols-2 items-stretch justify-items-center md:justify-items-start">
           <div className="max-w-[28rem] w-full flex flex-col items-center md:items-start text-center md:text-left justify-center md:justify-end order-2 md:order-1 py-6 md:h-[100vh] md:pl-16 p-6">
-            <h2 className="heading-2 md:relative md:top-[-15%]">
+            <h2
+              className={[
+                "heading-2 md:relative md:top-[-15%] uppercase font-medium tracking-tighter",
+                roboto_condensed.className,
+              ].join(" ")}
+            >
               New Womens Range
             </h2>
             <div className="flex flex-col items-center md:items-start gap-5 md:gap-10">
@@ -311,9 +327,16 @@ export default function Home() {
           />
         </SplideSlide>
         <SplideSlide className="grid grid-rows-1 md:grid-cols-2 items-stretch justify-items-center md:justify-items-start">
-          <div className="max-w-[28rem] w-full flex flex-col items-center md:items-start text-center md:text-left justify-center md:justify-end order-2 md:order-1 py-6 md:h-[100vh] md:pl-16 p-6">
-            <h2 className="heading-2 md:relative md:top-[-15%]">Fall Season</h2>
-            <div className="flex flex-col items-center md:items-start gap-5 md:gap-10">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left justify-center md:justify-end order-2 md:order-1 py-6 md:h-[100vh] md:pl-16 p-6">
+            <h2
+              className={[
+                "heading-2 md:relative md:top-[-15%] uppercase font-semibold text-antonio",
+                antonio.className,
+              ].join(" ")}
+            >
+              Fall Season
+            </h2>
+            <div className="max-w-[22.5rem] w-full flex flex-col items-center md:items-start gap-5 md:gap-10">
               <p className="font-serif text-[#6a6161]">
                 Our new range of overcoats, made from 100%
                 <span className="italic">&#32; cashmere</span>, ethically
