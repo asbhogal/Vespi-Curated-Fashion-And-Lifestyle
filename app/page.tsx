@@ -16,12 +16,13 @@ export default function Home() {
           // autoplay: true,
           arrows: false,
           height: "100dvh",
+          direction: "ttb",
           paginationDirection: "ttb",
           wheel: true,
         }}
       >
         <SplideSlide className="grid grid-cols-1 md:grid-cols-2 items-stretch justify-items-center">
-          <div className="max-w-[28rem] w-full flex flex-col items-center text-center justify-center py-6">
+          <div className="max-w-[28rem] w-full flex flex-col items-center text-center justify-center py-6 md:h-[100vh]">
             <p className="uppercase font-serif text-[0.8125rem]">
               Sebastian <span className="font-sans mx-3">&times;</span>Takagawa
             </p>
