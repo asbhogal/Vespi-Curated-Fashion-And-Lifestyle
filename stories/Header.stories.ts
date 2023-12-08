@@ -16,11 +16,11 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const LoggedIn: Story = {
-  /* args: {
+  args: {
     status: {
       status: "Log Out",
     },
-  }, */
+  },
 };
 
 export const LoggedOut: Story = {};

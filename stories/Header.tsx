@@ -140,13 +140,27 @@ export const Header = ({
         </svg>
         {status ? (
           <>
-            <Link className={lato.className} href="#" onClick={onLogout}>
+            <Link
+              className={[
+                "border border-transparent hover:border-black hover:border p-2 transition",
+                lato.className,
+              ].join(" ")}
+              href="#"
+              onClick={onLogout}
+            >
               Log Out
             </Link>
           </>
         ) : (
           <>
-            <Link className={lato.className} href="#" onClick={onLogin}>
+            <Link
+              className={[
+                "border border-transparent hover:border-black hover:border p-2 transition",
+                lato.className,
+              ].join(" ")}
+              href="#"
+              onClick={onLogin}
+            >
               Log In
             </Link>
           </>
