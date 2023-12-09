@@ -17,9 +17,7 @@ type Story = StoryObj<typeof meta>;
 
 export const LoggedIn: Story = {
   args: {
-    status: {
-      status: "Log Out",
-    },
+    status: "Log Out",
   },
 };
 
