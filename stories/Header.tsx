@@ -10,7 +10,7 @@ type Status = {
 };
 
 interface HeaderProps {
-  status?: Status;
+  status?: string; // temporarily changed to string
   onLogin: () => void;
   onLogout: () => void;
   onCreateAccount: () => void;
