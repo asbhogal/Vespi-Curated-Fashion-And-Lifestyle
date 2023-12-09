@@ -10,11 +10,14 @@ import { antonio, chakra_petch, roboto_condensed, unna } from "@/lib/types";
 
 export default function HomePageCarousel() {
   const [direction, setDirection] = useState("");
+  const [wheel, setWheel] = useState(false);
 
   useEffect(() => {
     function handleResize() {
       const newDirection = window.innerWidth < 768 ? "ltr" : "ttb";
+      const wheelInteraction = window.innerWidth > 768;
       setDirection(newDirection);
+      setWheel(wheelInteraction);
     }
 
     window.addEventListener("resize", handleResize);
@@ -35,16 +38,16 @@ export default function HomePageCarousel() {
           height: "100dvh",
           direction: direction,
           paginationDirection: direction,
-          wheel: true,
+          wheel: wheel,
         }}
       >
         <SplideSlide className="grid grid-rows-1 md:grid-cols-2 items-stretch justify-items-center md:justify-items-start">
-          <div className="max-w-[28rem] w-full flex flex-col items-center md:items-start text-center md:text-left justify-center md:justify-end order-2 md:order-1 py-6 md:h-[100vh] md:pl-16 p-6">
+          <div className="max-w-[28rem] w-full flex flex-col items-center lg:items-start text-center lg:text-left justify-center lg:justify-end order-2 md:order-1 py-6 lg:h-[100vh] lg:pl-16 p-6">
             <p className="uppercase font-serif text-[0.8125rem] mb-4">
               Sebastian <span className="font-sans mx-3">&times;</span>Takagawa
             </p>
             <h2 className="heading-2">Elegance & Comfort</h2>
-            <div className="flex flex-col items-center md:items-start gap-5 md:gap-10">
+            <div className="flex flex-col items-center lg:items-start gap-5 md:gap-10">
               <p className="font-serif text-[#6a6161]">
                 Our new range of overcoats, made from 100%
                 <span className="italic">&#32; cashmere</span>, ethically
@@ -104,7 +107,7 @@ export default function HomePageCarousel() {
             height={1200}
             width={960}
             className="block lg:hidden order-1"
-            style={{ height: "100%", objectFit: "cover", width: "100%" }}
+            style={{ height: "100%", objectFit: "contain", width: "100%" }}
           />
         </SplideSlide>
         <SplideSlide className="grid grid-rows-1 md:grid-cols-2 items-stretch justify-items-center md:justify-items-start">
@@ -177,7 +180,7 @@ export default function HomePageCarousel() {
             height={1200}
             width={960}
             className="block lg:hidden order-1"
-            style={{ height: "100%", objectFit: "cover", width: "100%" }}
+            style={{ height: "100%", objectFit: "contain", width: "100%" }}
           />
         </SplideSlide>
         <SplideSlide className="grid grid-rows-1 md:grid-cols-2 items-stretch justify-items-center md:justify-items-start">
@@ -250,7 +253,7 @@ export default function HomePageCarousel() {
             height={1200}
             width={960}
             className="block lg:hidden order-1"
-            style={{ height: "100%", objectFit: "cover", width: "100%" }}
+            style={{ height: "100%", objectFit: "contain", width: "100%" }}
           />
         </SplideSlide>
         <SplideSlide className="grid grid-rows-1 md:grid-cols-2 items-stretch justify-items-center md:justify-items-start">
@@ -323,7 +326,7 @@ export default function HomePageCarousel() {
             height={1200}
             width={960}
             className="block lg:hidden order-1"
-            style={{ height: "100%", objectFit: "cover", width: "100%" }}
+            style={{ height: "100%", objectFit: "contain", width: "100%" }}
           />
         </SplideSlide>
         <SplideSlide className="grid grid-rows-1 md:grid-cols-2 items-stretch justify-items-center md:justify-items-start">
@@ -396,7 +399,7 @@ export default function HomePageCarousel() {
             height={1200}
             width={960}
             className="block lg:hidden order-1"
-            style={{ height: "100%", objectFit: "cover", width: "100%" }}
+            style={{ height: "100%", objectFit: "contain", width: "100%" }}
           />
         </SplideSlide>
       </Splide>
