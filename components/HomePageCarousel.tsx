@@ -29,7 +29,7 @@ export default function HomePageCarousel() {
       <Splide
         className="max-w-[160rem] w-full"
         options={{
-          // type: "loop",
+          type: "loop",
           // autoplay: true,
           arrows: false,
           height: "100dvh",
