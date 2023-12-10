@@ -7,7 +7,15 @@ import {
   FormItem,
   FormLabel,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { toast } from "@/components/ui/use-toast";
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -16,18 +24,22 @@ import { Buttons } from "../stories/Button";
 interface AddToCartProps {
   size?: "small" | "medium" | "large";
   label: number;
-  quantity: number;
+  quantity: string;
   onClick?: () => void;
 }
 
 const formSchema = z.object({
   quantity: z
-    .number()
+    .string()
     .min(1, {
       message: "Please enter quantity",
     })
     .max(10),
 });
+
+const itemQuantity: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+const itemSize: string[] = ["s", "m", "l"];
 
 export const AddToCartForm = ({
   size = "medium",
@@ -38,12 +50,15 @@ export const AddToCartForm = ({
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      quantity: 1,
+      quantity: "1",
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+  function onSubmit(data: z.infer<typeof formSchema>) {
+    toast({
+      title: "Item added to bag",
+    });
+    console.log(parseInt(data.quantity));
   }
 
   return (
@@ -57,21 +72,37 @@ export const AddToCartForm = ({
               <FormLabel className={pt_serif.className}>
                 Choose Quantity
               </FormLabel>
-              <FormControl>
-                <Input
-                  className={[
-                    "rounded-none border border-black",
-                    pt_serif.className,
-                  ].join(" ")}
-                  type="number"
-                  placeholder="1"
-                  {...field}
-                />
-              </FormControl>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
+                  <SelectTrigger
+                    className={[
+                      "rounded-none border border-black input-style",
+                      pt_serif.className,
+                    ].join(" ")}
+                  >
+                    <SelectValue placeholder={field.value}></SelectValue>
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent className="rounded-none">
+                  <SelectGroup>
+                    {itemQuantity.map((quantity, index) => (
+                      <SelectItem
+                        key={index}
+                        value={quantity.toString()}
+                        className={["cursor-pointer", pt_serif.className].join(
+                          " "
+                        )}
+                      >
+                        {quantity}
+                      </SelectItem>
+                    ))}
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
             </FormItem>
           )}
         />
-        <Buttons primary label="Add To Bag" />
+        <Buttons primary type="submit" label="Add To Bag" />
       </form>
     </Form>
   );

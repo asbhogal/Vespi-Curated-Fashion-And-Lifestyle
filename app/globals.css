@@ -10,6 +10,10 @@
   transform: translateY(-2000%);
 } */
 
+.input-style {
+  padding: 0.8125rem 1.3125rem;
+}
+
 .splide__pagination__page {
   background-color: #c4c4c4 !important;
   opacity: 1 !important;
