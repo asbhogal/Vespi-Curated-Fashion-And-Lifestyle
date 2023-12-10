@@ -20,7 +20,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    quantity: 1,
+    quantity: "1",
     label: 1,
   },
 };
@@ -29,7 +29,7 @@ export const OrderedItem: Story = {
   args: {
     size: "medium",
     label: 1,
-    quantity: 1,
+    quantity: "1",
   },
   play: async ({ args, canvasElement, step }) => {
     const canvas = within(canvasElement);
