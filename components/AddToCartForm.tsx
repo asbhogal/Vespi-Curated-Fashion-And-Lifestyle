@@ -69,12 +69,13 @@ export const AddToCartForm = ({
           name="quantity"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className={pt_serif.className}>
+              <FormLabel id="quantity-label" className={pt_serif.className}>
                 Choose Quantity
               </FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger
+                    aria-labelledby="quantity-label"
                     className={[
                       "rounded-none border border-black input-style",
                       pt_serif.className,
