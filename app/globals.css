@@ -10,6 +10,34 @@
   transform: translateY(-2000%);
 } */
 
+@layer base {
+  input[type="radio"] {
+    @apply appearance-none;
+    background-color: #ffffff;
+    margin: 0;
+    font: inherit;
+    color: #000;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid #000;
+    border-radius: 50%;
+  }
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em purple;
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
 .input-style {
   padding: 0.8125rem 1.3125rem;
 }

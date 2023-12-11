@@ -4,6 +4,17 @@ import "./header.css";
 import Link from "next/link";
 import { lato } from "@/lib/types";
 import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { Buttons } from "./Button";
 
 type Status = {
   status: string;
@@ -54,7 +65,96 @@ export const Header = ({
   onCreateAccount,
 }: HeaderProps) => {
   return (
-    <header className="flex items-center justify-between py-6 px-20 border border-b-slate-300">
+    <header className="flex items-center justify-between p-5 lg:py-6 lg:px-20 border border-b-slate-300">
+      <div className="flex items-center lg:hidden">
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button className="bg-transparent hover:bg-transparent rounded-none p-0">
+              <svg
+                width="21"
+                height="12"
+                viewBox="0 0 21 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  width="21"
+                  height="2"
+                  rx="1"
+                  transform="matrix(1 0 0 -1 0 2)"
+                  fill="black"
+                />
+                <rect
+                  width="21"
+                  height="2"
+                  rx="1"
+                  transform="matrix(1 0 0 -1 0 7)"
+                  fill="black"
+                />
+                <rect
+                  width="21"
+                  height="2"
+                  rx="1"
+                  transform="matrix(1 0 0 -1 0 12)"
+                  fill="black"
+                />
+              </svg>
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="left">
+            <nav>
+              <ul className="flex flex-col max-w-lg w-full gap-4">
+                {menu.map((menu) => (
+                  <li key={menu.label}>
+                    <Link
+                      className={[
+                        "border border-transparent hover:border-black hover:border p-2 transition",
+                        lato.className,
+                      ].join(" ")}
+                      href={menu.href}
+                    >
+                      {menu.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </SheetContent>
+        </Sheet>
+        <Button
+          className="block lg:hidden search bg-transparent hover:bg-transparent"
+          aria-labelledby="search-label"
+        >
+          <span id="search-label" hidden>
+            Search
+          </span>
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            width="15"
+            height="17"
+            viewBox="0 0 15 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="6.5"
+              cy="7.5"
+              r="5.75"
+              stroke="black"
+              stroke-width="1.5"
+            />
+            <line
+              y1="-0.75"
+              x2="5.21116"
+              y2="-0.75"
+              transform="matrix(0.697461 0.716622 -0.697461 0.716622 10 13)"
+              stroke="black"
+              stroke-width="1.5"
+            />
+          </svg>
+        </Button>
+      </div>
       <div className="flex header-left">
         <svg
           width="64" // adjusted value directly - will review
@@ -69,7 +169,7 @@ export const Header = ({
           />
         </svg>
       </div>
-      <div className="header-middle">
+      <div className="hidden lg:block header-middle">
         <nav>
           <ul className="flex max-w-lg w-full gap-16">
             {menu.map((menu) => (
@@ -90,7 +190,7 @@ export const Header = ({
       </div>
       <div className="flex items-center gap-8 header-right">
         <Button
-          className="search bg-transparent hover:bg-transparent"
+          className="hidden lg:block search bg-transparent hover:bg-transparent"
           aria-labelledby="search-label"
         >
           <span id="search-label" hidden>
@@ -123,6 +223,7 @@ export const Header = ({
           </svg>
         </Button>
         <svg
+          className="hidden lg:block"
           width="1"
           height="21"
           viewBox="0 0 1 21"
@@ -142,7 +243,7 @@ export const Header = ({
           <>
             <Link
               className={[
-                "border border-transparent hover:border-black hover:border p-2 transition",
+                "hidden lg:block border border-transparent hover:border-black hover:border p-2 transition",
                 lato.className,
               ].join(" ")}
               href="#"
@@ -155,7 +256,7 @@ export const Header = ({
           <>
             <Link
               className={[
-                "border border-transparent hover:border-black hover:border p-2 transition",
+                "hidden lg:block border border-transparent hover:border-black hover:border p-2 transition",
                 lato.className,
               ].join(" ")}
               href="#"

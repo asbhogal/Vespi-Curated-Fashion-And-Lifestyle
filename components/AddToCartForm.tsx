@@ -69,82 +69,74 @@ export const AddToCartForm = ({
 
   return (
     <Form {...form}>
-      <form
-        id="add-to-cart"
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-8"
-      >
-        <div>
-          <FormField
-            control={form.control}
-            name="quantity"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel id="quantity-label" className={pt_serif.className}>
-                  Choose Quantity
-                </FormLabel>
-                <Select
+      <form id="add-to-cart" onSubmit={form.handleSubmit(onSubmit)}>
+        <FormField
+          control={form.control}
+          name="quantity"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel id="quantity-label" className={pt_serif.className}>
+                Choose Quantity
+              </FormLabel>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
+                  <SelectTrigger
+                    aria-labelledby="quantity-label"
+                    className={[
+                      "rounded-none border border-black input-style",
+                      pt_serif.className,
+                    ].join(" ")}
+                  >
+                    <SelectValue placeholder={field.value}></SelectValue>
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent className="rounded-none">
+                  <SelectGroup>
+                    {itemQuantity.map((quantity, index) => (
+                      <SelectItem
+                        key={index}
+                        value={quantity.toString()}
+                        className={["cursor-pointer", pt_serif.className].join(
+                          " "
+                        )}
+                      >
+                        {quantity}
+                      </SelectItem>
+                    ))}
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="type"
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <RadioGroup
                   onValueChange={field.onChange}
                   defaultValue={field.value}
+                  className="flex"
                 >
-                  <FormControl>
-                    <SelectTrigger
-                      aria-labelledby="quantity-label"
-                      className={[
-                        "rounded-none border border-black input-style",
-                        pt_serif.className,
-                      ].join(" ")}
-                    >
-                      <SelectValue placeholder={field.value}></SelectValue>
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent className="rounded-none">
-                    <SelectGroup>
-                      {itemQuantity.map((quantity, index) => (
-                        <SelectItem
-                          key={index}
-                          value={quantity.toString()}
-                          className={[
-                            "cursor-pointer",
-                            pt_serif.className,
-                          ].join(" ")}
-                        >
-                          {quantity}
-                        </SelectItem>
-                      ))}
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
-              </FormItem>
-            )}
-          />
-        </div>
-        <div>
-          <FormField
-            control={form.control}
-            name="type"
-            render={({ field }) => (
-              <FormItem>
-                <FormControl>
-                  <RadioGroup
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                    className="flex"
-                  >
-                    {itemSize.map((size) => (
-                      <FormItem key={size}>
-                        <FormControl>
-                          <RadioGroupItem value={size} />
-                        </FormControl>
-                        <FormLabel>{size}</FormLabel>
-                      </FormItem>
-                    ))}
-                  </RadioGroup>
-                </FormControl>
-              </FormItem>
-            )}
-          />
-        </div>
+                  {itemSize.map((size) => (
+                    <FormItem key={size}>
+                      <FormControl>
+                        <RadioGroupItem
+                          className="!appearance-none"
+                          value={size}
+                        />
+                      </FormControl>
+                      <FormLabel>{size}</FormLabel>
+                    </FormItem>
+                  ))}
+                </RadioGroup>
+              </FormControl>
+            </FormItem>
+          )}
+        />
       </form>
       <Buttons id="add-to-cart" primary type="submit" label="Add To Bag" />
     </Form>
