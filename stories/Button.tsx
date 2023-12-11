@@ -3,6 +3,7 @@ import { Button } from "../components/ui/button";
 import { lato } from "@/lib/types";
 
 interface ButtonProps {
+  id?: string;
   primary?: boolean;
   backgroundColor?: string;
   size?: "small" | "medium" | "large";
@@ -13,6 +14,7 @@ interface ButtonProps {
 }
 
 export const Buttons = ({
+  id,
   primary = false,
   size = "medium",
   backgroundColor,
