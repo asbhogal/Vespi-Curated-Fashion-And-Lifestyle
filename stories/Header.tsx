@@ -15,6 +15,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Buttons } from "./Button";
+import Image from "next/image";
 
 type Status = {
   status: string;
@@ -54,6 +55,7 @@ const menu: MenuType[] = [
 type CartType = {
   id: number;
   img: string;
+  imgAlt: string;
   product: string;
   quantity: number;
   size: string;
@@ -64,6 +66,7 @@ const sampleCart: CartType[] = [
   {
     id: 1,
     img: "/basic-turtleneck.jpg",
+    imgAlt: "A black middle-aged man wearing a black turtleneck",
     product: "Basic Turtleneck",
     quantity: 1,
     size: "s",
@@ -72,6 +75,8 @@ const sampleCart: CartType[] = [
   {
     id: 2,
     img: "/basic-parker.jpg",
+    imgAlt:
+      "A man wearing a parker jacket standing sideways in front of a fence",
     product: "Basic Parker",
     quantity: 1,
     size: "s",
@@ -80,6 +85,8 @@ const sampleCart: CartType[] = [
   {
     id: 3,
     img: "/patterned-short-sleeve-shirt.jpg",
+    imgAlt:
+      "A black young man wearing a patterned short sleeve shirt standing in the street",
     product: "Patterned Short Sleeve Shirt",
     quantity: 1,
     size: "s",
@@ -338,7 +345,20 @@ export const Header = ({
             <div>
               <ul>
                 {sampleCart.map((products) => (
-                  <li key={products.id}></li>
+                  <li key={products.id}>
+                    <div>
+                      <div>
+                        <Image
+                          alt={products.imgAlt}
+                          src={`/images/products/small/${products.img}`}
+                        />
+                        {products.quantity}
+                        {products.size}
+                        {products.product}
+                      </div>
+                      <p>{products.price}</p>
+                    </div>
+                  </li>
                 ))}
               </ul>
             </div>
