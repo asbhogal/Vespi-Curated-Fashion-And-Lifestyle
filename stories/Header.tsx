@@ -2,7 +2,7 @@
 
 import "./header.css";
 import Link from "next/link";
-import { lato } from "@/lib/types";
+import { lato, pt_serif } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -48,6 +48,42 @@ const menu: MenuType[] = [
   {
     href: "/aboutus",
     label: "About Us",
+  },
+];
+
+type CartType = {
+  id: number;
+  img: string;
+  product: string;
+  quantity: number;
+  size: string;
+  price: number;
+};
+
+const sampleCart: CartType[] = [
+  {
+    id: 1,
+    img: "/basic-turtleneck.jpg",
+    product: "Basic Turtleneck",
+    quantity: 1,
+    size: "s",
+    price: 125.0,
+  },
+  {
+    id: 2,
+    img: "/basic-parker.jpg",
+    product: "Basic Parker",
+    quantity: 1,
+    size: "s",
+    price: 125.0,
+  },
+  {
+    id: 3,
+    img: "/patterned-short-sleeve-shirt.jpg",
+    product: "Patterned Short Sleeve Shirt",
+    quantity: 1,
+    size: "s",
+    price: 125.0,
   },
 ];
 function onLogin() {
@@ -198,7 +234,7 @@ export const Header = ({
       </div>
       <div className="flex items-center gap-8 header-right">
         <Button
-          className="hidden lg:block search bg-transparent hover:bg-transparent"
+          className="hidden lg:block search bg-transparent hover:bg-transparent rounded-none border border-transparent hover:border-black transition"
           aria-labelledby="search-label"
         >
           <span id="search-label" hidden>
@@ -274,14 +310,40 @@ export const Header = ({
             </Link>
           </>
         )}
-        <Button
-          className={[
-            "bg-[#f1eadc] text-black font-bold hover:bg-black hover:text-white rounded-full h-12 w-12 p-8",
-            lato.className,
-          ].join("")}
-        >
-          1
-        </Button>
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button
+              className={[
+                "bg-[#f1eadc] text-black font-bold hover:bg-black hover:text-white rounded-full h-12 w-12 p-8",
+                lato.className,
+              ].join("")}
+            >
+              1
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right">
+            <div className="flex items-center gap-5">
+              <span
+                className={[
+                  "flex items-center justify-center border border-black rounded-full h-12 w-12 font-bold text-sm",
+                  lato.className,
+                ].join(" ")}
+              >
+                3
+              </span>
+              <p className={["font-bold", pt_serif.className].join(" ")}>
+                Items in My Bag
+              </p>
+            </div>
+            <div>
+              <ul>
+                {sampleCart.map((products) => (
+                  <li key={products.id}></li>
+                ))}
+              </ul>
+            </div>
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
   );
