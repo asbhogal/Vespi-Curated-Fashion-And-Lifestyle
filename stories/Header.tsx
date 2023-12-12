@@ -131,10 +131,10 @@ export const Header = ({
         </Sheet>
         <Button
           className="block lg:hidden search bg-transparent hover:bg-transparent"
-          aria-labelledby="search-label"
+          aria-labelledby="mobile-search-label"
         >
-          <span id="search-label" hidden>
-            Search
+          <span id="mobile-search-label" hidden>
+            Mobile Search
           </span>
           <svg
             aria-hidden="true"
