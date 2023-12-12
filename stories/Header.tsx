@@ -69,8 +69,16 @@ export const Header = ({
       <div className="flex items-center lg:hidden">
         <Sheet>
           <SheetTrigger asChild>
-            <Button className="bg-transparent hover:bg-transparent rounded-none p-0">
+            <Button
+              className="bg-transparent hover:bg-transparent rounded-none p-0"
+              aria-labelledby="menu-toggle"
+            >
+              <span id="menu-toggle" hidden>
+                Menu Toggle
+              </span>
               <svg
+                aria-hidden="true"
+                focusable="false"
                 width="21"
                 height="12"
                 viewBox="0 0 21 12"
