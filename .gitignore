@@ -19,6 +19,7 @@
 # misc
 .DS_Store
 *.pem
+mockServiceWorker.js
 
 # debug
 npm-debug.log*

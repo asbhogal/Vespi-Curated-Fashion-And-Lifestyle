@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/sheet";
 import { Buttons } from "./Button";
 import Image from "next/image";
+import { formatCurrency } from "@/utils/formatCurrency";
 
 type Status = {
   status: string;
@@ -346,17 +347,34 @@ export const Header = ({
               <ul>
                 {sampleCart.map((products) => (
                   <li key={products.id}>
-                    <div>
-                      <div>
+                    <div className="flex justify-between">
+                      <div className="flex gap-7">
                         <Image
+                          width={79}
+                          height={91}
                           alt={products.imgAlt}
                           src={`/images/products/small/${products.img}`}
                         />
-                        {products.quantity}
-                        {products.size}
-                        {products.product}
+                        <div>
+                          <p
+                            className={["text-xl", pt_serif.className].join(
+                              " "
+                            )}
+                          >
+                            {products.product}
+                          </p>
+                          <div className="flex gap-4">
+                            <p>Qty: {products.quantity}</p>
+                            <p>
+                              Size:
+                              <span className="uppercase">{products.size}</span>
+                            </p>
+                          </div>
+                        </div>
                       </div>
-                      <p>{products.price}</p>
+                      <p className="text-lg">{`${formatCurrency(
+                        products.price
+                      )}`}</p>
                     </div>
                   </li>
                 ))}

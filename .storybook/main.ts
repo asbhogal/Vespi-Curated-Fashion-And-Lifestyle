@@ -24,6 +24,7 @@ const config: StorybookConfig = {
         "@/lib": path.resolve(__dirname, "../lib"),
         "@/components": path.resolve(__dirname, "../components"),
         "@/types": path.resolve(__dirname, "../types"),
+        "@/utils": path.resolve(__dirname, "../utils"),
       };
     }
     return config;
