@@ -6,6 +6,7 @@ interface ButtonProps {
   id?: string;
   primary?: boolean;
   backgroundColor?: string;
+  className?: string;
   size?: "small" | "medium" | "large";
   type?: string;
   label: string;
@@ -18,6 +19,7 @@ export const Buttons = ({
   primary = false,
   size = "medium",
   backgroundColor,
+  className,
   label,
   icon,
   type,
@@ -31,13 +33,11 @@ export const Buttons = ({
   return (
     <Button
       className={[
-        "h-[3.75rem]",
-        "rounded-none",
-        "transition",
-        "storybook-button",
+        "h-[3.75rem] rounded-none transition font-bold storybook-button text-[0.8125rem]",
         `storybook-button--${size}`,
         mode,
         specialClass,
+        className,
         lato.className,
       ].join(" ")}
       {...props}

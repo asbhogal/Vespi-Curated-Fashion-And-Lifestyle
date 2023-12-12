@@ -14,6 +14,9 @@ import Image from "next/image";
 import { formatCurrency } from "@/utils/formatCurrency";
 import { pt_serif, lato } from "@/lib/types";
 import { Button } from "./ui/button";
+import { Separator } from "./ui/separator";
+import { Buttons } from "@/stories/Button";
+import Link from "next/link";
 
 type CartType = {
   id: number;
@@ -70,52 +73,99 @@ export default function ShoppingCart() {
           1
         </Button>
       </SheetTrigger>
-      <SheetContent side="right">
+      <SheetContent className="max-w-[20rem] w-full h-fit" side="right">
         <div className="flex items-center gap-5">
           <span
             className={[
-              "flex items-center justify-center border border-black rounded-full h-12 w-12 font-bold text-sm",
+              "flex items-center justify-center border border-[#545454] rounded-full h-12 w-12 font-bold text-sm",
               lato.className,
             ].join(" ")}
           >
             3
           </span>
-          <p className={["font-bold", pt_serif.className].join(" ")}>
+          <p className={["font-bold text-xl", pt_serif.className].join(" ")}>
             Items in My Bag
           </p>
         </div>
+        <Separator className="h-[0.0625rem] bg-[#e2e2e2] my-6" />
         <div>
           <ul>
             {sampleCart.map((products) => (
               <li key={products.id}>
-                <div className="flex justify-between">
-                  <div className="flex gap-7">
+                <div className="grid grid-cols-[auto_auto_auto]">
+                  <div className="grid grid-cols-[auto_auto_auto] gap-7">
                     <Image
                       width={79}
                       height={91}
                       alt={products.imgAlt}
                       src={`/images/products/small/${products.img}`}
                     />
-                    <div>
-                      <p className={["text-xl", pt_serif.className].join(" ")}>
-                        {products.product}
-                      </p>
-                      <div className="flex gap-4">
-                        <p>Qty: {products.quantity}</p>
-                        <p>
-                          Size:
-                          <span className="uppercase">{products.size}</span>
+                    <div className="flex flex-col gap-4">
+                      <div className="flex flex-col">
+                        <p
+                          className={["text-xl", pt_serif.className].join(" ")}
+                        >
+                          {products.product}
+                        </p>
+                        <div className="flex gap-3">
+                          <p className={["text-sm", lato.className].join(" ")}>
+                            Qty: {products.quantity}
+                          </p>
+                          <p className={["text-sm", lato.className].join(" ")}>
+                            Size:
+                            <span className="uppercase">{products.size}</span>
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <p
+                          className={[
+                            "text-sm text-[#595959]",
+                            lato.className,
+                          ].join(" ")}
+                        >
+                          Edit
+                        </p>
+                        <Separator className="h-[0.0625rem] w-2 bg-[#595959]" />
+                        <p
+                          className={[
+                            "text-sm text-[#595959]",
+                            lato.className,
+                          ].join(" ")}
+                        >
+                          Remove
                         </p>
                       </div>
                     </div>
                   </div>
-                  <p className="text-lg">{`${formatCurrency(
-                    products.price
-                  )}`}</p>
+                  <p
+                    className={["text-lg", pt_serif.className].join(" ")}
+                  >{`${formatCurrency(products.price)}`}</p>
                 </div>
+                <Separator className="h-[0.0625rem] bg-[#e2e2e2] my-6" />
               </li>
             ))}
           </ul>
+          <div className="flex justify-between mb-8">
+            <p className={["text-[1.0625rem]", pt_serif.className].join(" ")}>
+              Sub-total
+            </p>
+            <p className={["text-[1.0625rem]", pt_serif.className].join(" ")}>
+              $375
+            </p>
+          </div>
+          <div className="flex items-center gap-9">
+            <Link
+              href="#"
+              className={[
+                "text-[1.0625rem] border-b border-black",
+                pt_serif.className,
+              ].join(" ")}
+            >
+              View Bag
+            </Link>
+            <Buttons primary label="Check Out" className="flex-1" />
+          </div>
         </div>
       </SheetContent>
     </Sheet>
