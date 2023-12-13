@@ -73,7 +73,10 @@ export default function ShoppingCart() {
           1
         </Button>
       </SheetTrigger>
-      <SheetContent className="max-w-[20rem] w-full h-fit" side="right">
+      <SheetContent
+        className="max-w-[24rem] w-full h-[48rem] overflow-y-scroll"
+        side="right"
+      >
         <div className="flex items-center gap-5">
           <span
             className={[
@@ -146,25 +149,27 @@ export default function ShoppingCart() {
               </li>
             ))}
           </ul>
-          <div className="flex justify-between mb-8">
-            <p className={["text-[1.0625rem]", pt_serif.className].join(" ")}>
-              Sub-total
-            </p>
-            <p className={["text-[1.0625rem]", pt_serif.className].join(" ")}>
-              $375
-            </p>
-          </div>
-          <div className="flex items-center gap-9">
-            <Link
-              href="#"
-              className={[
-                "text-[1.0625rem] border-b border-black",
-                pt_serif.className,
-              ].join(" ")}
-            >
-              View Bag
-            </Link>
-            <Buttons primary label="Check Out" className="flex-1" />
+          <div>
+            <div className="flex justify-between mb-8">
+              <p className={["text-[1.0625rem]", pt_serif.className].join(" ")}>
+                Sub-total
+              </p>
+              <p className={["text-[1.0625rem]", pt_serif.className].join(" ")}>
+                $375
+              </p>
+            </div>
+            <div className="flex items-center gap-9">
+              <Link
+                href="#"
+                className={[
+                  "text-[1.0625rem] border-b border-black",
+                  pt_serif.className,
+                ].join(" ")}
+              >
+                View Bag
+              </Link>
+              <Buttons primary label="Check Out" className="flex-1" />
+            </div>
           </div>
         </div>
       </SheetContent>

@@ -69,7 +69,7 @@ export const Header = ({
   onCreateAccount,
 }: HeaderProps) => {
   return (
-    <header className="flex items-center justify-between p-5 lg:py-6 lg:px-20 border border-b-slate-300 w-full absolute z-10">
+    <header className="flex items-center justify-between p-5 lg:py-6 lg:px-16 border border-b-slate-300 w-full absolute z-10">
       <div className="flex items-center lg:hidden">
         <Sheet>
           <SheetTrigger asChild>
