@@ -74,7 +74,7 @@ export default function ShoppingCart() {
         </Button>
       </SheetTrigger>
       <SheetContent
-        className="max-w-[24rem] w-full h-[48rem] overflow-y-scroll"
+        className="max-w-[24rem] w-full h-[44rem] overflow-y-scroll"
         side="right"
       >
         <div className="flex items-center gap-5">
