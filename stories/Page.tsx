@@ -13,6 +13,7 @@ export const Page: React.FC = () => {
   return (
     <article>
       <Header
+        defaultLayout
         status={"Status"}
         onLogin={() => setUser({ name: "Jane Doe" })}
         onLogout={() => setUser(undefined)}
