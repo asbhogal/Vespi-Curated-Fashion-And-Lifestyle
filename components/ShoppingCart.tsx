@@ -36,7 +36,7 @@ const sampleCart: CartType[] = [
     product: "Basic Turtleneck",
     quantity: 1,
     size: "s",
-    price: 125.0,
+    price: 125,
   },
   {
     id: 2,
@@ -46,7 +46,7 @@ const sampleCart: CartType[] = [
     product: "Basic Parker",
     quantity: 1,
     size: "s",
-    price: 125.0,
+    price: 125,
   },
   {
     id: 3,
@@ -56,7 +56,7 @@ const sampleCart: CartType[] = [
     product: "Patterned Short Sleeve Shirt",
     quantity: 1,
     size: "s",
-    price: 125.0,
+    price: 125,
   },
 ];
 
@@ -95,50 +95,46 @@ export default function ShoppingCart() {
           <ul>
             {sampleCart.map((products) => (
               <li key={products.id}>
-                <div className="grid grid-cols-[auto_auto_auto]">
-                  <div className="grid grid-cols-[auto_auto_auto] gap-7">
-                    <Image
-                      width={79}
-                      height={91}
-                      alt={products.imgAlt}
-                      src={`/images/products/small/${products.img}`}
-                    />
-                    <div className="flex flex-col gap-4">
-                      <div className="flex flex-col">
-                        <p
-                          className={["text-xl", pt_serif.className].join(" ")}
-                        >
-                          {products.product}
+                <div className="grid grid-cols-3 gap-5">
+                  <Image
+                    width={149}
+                    height={172}
+                    alt={products.imgAlt}
+                    src={`/images/products/small/${products.img}`}
+                  />
+                  <div className="flex flex-col gap-4">
+                    <div className="flex flex-col">
+                      <p className={["text-xl", pt_serif.className].join(" ")}>
+                        {products.product}
+                      </p>
+                      <div className="flex gap-3">
+                        <p className={["text-sm", lato.className].join(" ")}>
+                          Qty: {products.quantity}
                         </p>
-                        <div className="flex gap-3">
-                          <p className={["text-sm", lato.className].join(" ")}>
-                            Qty: {products.quantity}
-                          </p>
-                          <p className={["text-sm", lato.className].join(" ")}>
-                            Size:
-                            <span className="uppercase">{products.size}</span>
-                          </p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <p
-                          className={[
-                            "text-sm text-[#595959]",
-                            lato.className,
-                          ].join(" ")}
-                        >
-                          Edit
-                        </p>
-                        <Separator className="h-[0.0625rem] w-2 bg-[#595959]" />
-                        <p
-                          className={[
-                            "text-sm text-[#595959]",
-                            lato.className,
-                          ].join(" ")}
-                        >
-                          Remove
+                        <p className={["text-sm", lato.className].join(" ")}>
+                          Size:
+                          <span className="uppercase">{products.size}</span>
                         </p>
                       </div>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <p
+                        className={[
+                          "text-sm text-[#595959]",
+                          lato.className,
+                        ].join(" ")}
+                      >
+                        Edit
+                      </p>
+                      <Separator className="h-[0.0625rem] w-2 bg-[#595959]" />
+                      <p
+                        className={[
+                          "text-sm text-[#595959]",
+                          lato.className,
+                        ].join(" ")}
+                      >
+                        Remove
+                      </p>
                     </div>
                   </div>
                   <p
