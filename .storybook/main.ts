@@ -10,12 +10,16 @@ const config: StorybookConfig = {
     "../stories/**/*.mdx",
     "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
+  features: {
+    experimentalNextRSC: true,
+  },
   addons: [
     "@storybook/addon-a11y",
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
+    "@storybook/addon-mdx-gfm",
   ],
   async webpackFinal(config, { configType }) {
     if (config?.resolve?.alias) {
