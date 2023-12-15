@@ -71,36 +71,10 @@ export const Header = ({
   onCreateAccount,
   defaultLayout,
 }: HeaderProps) => {
-  const [background, setBackground] = useState("");
-  const [border, setBorder] = useState("");
-
-  useEffect(() => {
-    function manageResponsiveStyles() {
-      const backgroundColor =
-        window.innerWidth < 768 ? "bg-white" : "bg-transparent";
-      const borderColor =
-        window.innerWidth < 768 || defaultLayout
-          ? "border border-b-slate-300"
-          : "";
-
-      setBackground(backgroundColor);
-      setBorder(borderColor);
-    }
-    manageResponsiveStyles();
-
-    window.addEventListener("resize", manageResponsiveStyles);
-
-    return () => {
-      window.removeEventListener("resize", manageResponsiveStyles);
-    };
-  }, [defaultLayout]);
-
   return (
     <header
       className={[
-        "flex items-center justify-between p-5 lg:py-6 lg:px-16 w-full absolute z-10",
-        background,
-        border,
+        "flex items-center justify-between p-5 lg:py-6 lg:px-16 w-full absolute z-10 bg-white lg:bg-transparent border border-b-slate-300 lg:border-none",
       ].join(" ")}
     >
       {defaultLayout ? (
