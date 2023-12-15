@@ -19,8 +19,10 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
-    "@storybook/addon-mdx-gfm",
+    "msw-storybook-addon",
+    "storybook-addon-module-mock",
   ],
+  staticDirs: ["../public"],
   async webpackFinal(config, { configType }) {
     if (config?.resolve?.alias) {
       config.resolve.alias = {

@@ -15,7 +15,7 @@ export default function IGFeed() {
   const [validatedPosts, setValidatedPosts] = useState<IGFeed[]>([]);
 
   useEffect(() => {
-    fetch("/api/IG")
+    fetch("https://vespi-fashion.com/api/IG*")
       .then((res) => res.json())
       .then((post: unknown) => {
         const validatedData = iGFeedSchema.array().safeParse(post);
@@ -26,6 +26,7 @@ export default function IGFeed() {
         }
 
         setValidatedPosts(validatedData.data);
+        console.log(validatedData.data);
       });
   }, []);
 

@@ -1,8 +1,10 @@
-import { initialize, mswLoader } from "msw-storybook-addon";
+import { initialize } from "msw-storybook-addon";
 import type { Preview } from "@storybook/react";
 import "../app/globals.css";
 
-initialize();
+initialize({
+  onUnhandledRequest: "bypass",
+});
 
 const preview: Preview = {
   parameters: {
