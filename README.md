@@ -17,6 +17,7 @@ A refined, luxury Mens and Womens fashion store and lifestyle journal built as a
  - Next.js API routes for server-side data fetching
  - a11y Storybook add-on for isolated accessibility audits
  - Shadcn for accessible, reusable components
+ - Splide.js for accessible carousel
  - Husky to run linting prior to Git Commit
  - E2E testing across multiple browsers using Playwright
 
