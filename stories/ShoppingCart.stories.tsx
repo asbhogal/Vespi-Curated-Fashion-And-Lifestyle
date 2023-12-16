@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import ShoppingCart from "@/components/ShoppingCart";
+import ShoppingCart, { ShoppingCartProps } from "@/components/ShoppingCart";
 
 const meta = {
   title: "Vespi/ShoppingBag",
@@ -15,4 +15,10 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const ShoppingBag: Story = {};
+export const ShoppingBag: Story = (args: ShoppingCartProps) => (
+  <ShoppingCart {...args} />
+);
+
+ShoppingBag.args = {
+  defaultLayout: true, // or provide the initial value you want
+};

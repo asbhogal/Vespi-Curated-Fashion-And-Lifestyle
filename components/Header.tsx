@@ -384,7 +384,7 @@ export const Header = ({
             </Link>
           </>
         )}
-        <ShoppingCart />
+        <ShoppingCart defaultLayout={defaultLayout} />
       </div>
     </header>
   );

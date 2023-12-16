@@ -28,6 +28,10 @@ type CartType = {
   price: number;
 };
 
+export type ShoppingCartProps = {
+  defaultLayout: boolean;
+};
+
 const sampleCart: CartType[] = [
   {
     id: 1,
@@ -60,13 +64,14 @@ const sampleCart: CartType[] = [
   },
 ];
 
-export default function ShoppingCart() {
+export default function ShoppingCart({ defaultLayout }: ShoppingCartProps) {
+  const buttonBgColor = defaultLayout ? "[#f1eadc]" : "white";
   return (
     <Sheet>
       <SheetTrigger asChild>
         <Button
           className={[
-            "bg-[#f1eadc] text-black font-bold hover:bg-black hover:text-white rounded-full h-7 w-7 lg:h-12 lg:w-12 p-0 lg:p-8",
+            `bg-${buttonBgColor} text-black font-bold hover:bg-black hover:text-white rounded-full h-7 w-7 lg:h-12 lg:w-12 p-0 lg:p-8`,
             lato.className,
           ].join("")}
         >
