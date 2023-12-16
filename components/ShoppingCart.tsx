@@ -66,7 +66,7 @@ export default function ShoppingCart() {
       <SheetTrigger asChild>
         <Button
           className={[
-            "bg-[#f1eadc] text-black font-bold hover:bg-black hover:text-white rounded-full h-12 w-12 p-8",
+            "bg-[#f1eadc] text-black font-bold hover:bg-black hover:text-white rounded-full h-7 w-7 lg:h-12 lg:w-12 p-0 lg:p-8",
             lato.className,
           ].join("")}
         >
@@ -74,7 +74,7 @@ export default function ShoppingCart() {
         </Button>
       </SheetTrigger>
       <SheetContent
-        className="max-w-[24rem] w-full h-[44rem] overflow-y-scroll"
+        className="max-w-[24rem] w-full h-auto overflow-y-scroll"
         side="right"
       >
         <div className="flex items-center gap-5">

@@ -20,6 +20,7 @@ import { formatCurrency } from "@/utils/formatCurrency";
 import ShoppingCart from "@/components/ShoppingCart";
 import { useEffect, useState } from "react";
 import Search from "@/components/Search";
+import { MenuType } from "@/utils/types";
 
 type Status = {
   status: string;
@@ -32,11 +33,6 @@ interface HeaderProps {
   onCreateAccount?: () => void;
   defaultLayout: boolean;
 }
-
-type MenuType = {
-  href: string;
-  label: string;
-};
 
 const menu: MenuType[] = [
   {
@@ -75,7 +71,7 @@ export const Header = ({
   return (
     <header
       className={[
-        "flex items-center justify-between p-5 lg:py-6 lg:px-16 w-full absolute z-10 bg-white lg:bg-transparent border border-b-slate-300 lg:border-none",
+        "flex items-center justify-between h-[3.75rem] lg:h-16 p-5 lg:py-6 lg:px-16 w-full absolute z-10 bg-white lg:bg-transparent border border-b-slate-300 lg:border-none",
       ].join(" ")}
     >
       {defaultLayout ? (
