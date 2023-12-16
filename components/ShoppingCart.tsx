@@ -15,7 +15,7 @@ import { formatCurrency } from "@/utils/formatCurrency";
 import { pt_serif, lato } from "@/lib/types";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
-import { Buttons } from "@/stories/Button";
+import { Buttons } from "@/components/Button";
 import Link from "next/link";
 
 type CartType = {

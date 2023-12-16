@@ -1,5 +1,5 @@
 import HomePageCarousel from "@/components/HomePageCarousel";
-import { Header } from "@/stories/Header";
+import { Header } from "@/components/Header";
 
 export default function Home() {
   return (

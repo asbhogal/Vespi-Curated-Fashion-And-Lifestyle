@@ -8,3 +8,7 @@ export type SearchProps = {
   ariaLabelledBy: string;
   spanID: string;
 };
+
+export type Status = {
+  status: string;
+};

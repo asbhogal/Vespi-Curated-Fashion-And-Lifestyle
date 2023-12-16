@@ -22,7 +22,7 @@ import { toast } from "@/components/ui/use-toast";
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Buttons } from "../stories/Button";
+import { Buttons } from "./Button";
 
 interface AddToCartProps {
   size?: "small" | "medium" | "large";

@@ -1,30 +1,12 @@
 "use client";
 
-import "./header.css";
 import Link from "next/link";
-import { lato, pt_serif } from "@/lib/types";
+import { lato } from "@/lib/types";
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetDescription,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import { Buttons } from "./Button";
-import Image from "next/image";
-import { formatCurrency } from "@/utils/formatCurrency";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import ShoppingCart from "@/components/ShoppingCart";
-import { useEffect, useState } from "react";
 import Search from "@/components/Search";
 import { MenuType } from "@/utils/types";
-
-type Status = {
-  status: string;
-};
 
 interface HeaderProps {
   status?: string; // temporarily changed to string

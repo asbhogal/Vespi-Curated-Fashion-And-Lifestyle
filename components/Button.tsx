@@ -1,5 +1,5 @@
-import "./button.css";
-import { Button } from "../components/ui/button";
+import "@/stories/button.css";
+import { Button } from "./ui/button";
 import { lato } from "@/lib/types";
 
 interface ButtonProps {
