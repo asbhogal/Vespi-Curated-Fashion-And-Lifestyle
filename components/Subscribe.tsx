@@ -1,4 +1,3 @@
-import { pt_serif } from "@/lib/types";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 
@@ -23,18 +22,18 @@ export default function Subscribe() {
             <circle cx="4" cy="5" r="1" fill="white" />
             <circle cx="10" cy="5" r="1" fill="white" />
           </svg>
-          <p className={["uppercase text-sm", pt_serif.className].join(" ")}>
+          <p className="uppercase text-sm font-serif tracking-[0.01625rem]">
             We also make emails
           </p>
         </div>
-        <p className={["text-[#6A6161] text-sm", pt_serif.className].join(" ")}>
+        <p className="text-[#6A6161] text-sm font-serif">
           Receive updates and offers you&apos;ll actually be interested in.
           Unsubscribe any time.
         </p>
       </div>
       <form className="relative inline-block">
         <Input
-          className="max-w-80 w-full h-[3.625rem] rounded-none border border-black"
+          className="max-w-80 w-full h-[3.625rem] rounded-none border border-black placeholder:text-black placeholder:text-[1.0625rem] placeholder:font-serif"
           placeholder="Your email"
         ></Input>
         <Button
