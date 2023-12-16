@@ -6,6 +6,20 @@
 
 A refined, luxury Mens and Womens fashion store and lifestyle journal built as an SPA using Next.js, TypeScript, Sanity Studio, Shopify, Stripe API (in demo mode), Storybook, Tailwind CSS, Shadcn, React Hook Form, Zod and E2E testing using Playwright from Figma templates created by Process Masterclass leader Nguyen Le. This repo is currently under development.
 
+<strong>Features</strong>
+ - TypeScript to enforce type safety
+ - Custom designed and developed 404 error page
+ - Storybook for isolated development and testing of UI components
+ - Sanity for blog articles (retrieved via Grok queries)
+ - Shopify Storefront API for products
+ - Stripe API for payments (demo mode)
+ - React Hook Form and Zod for input validation
+ - Next.js API routes for server-side data fetching
+ - a11y Storybook add-on for isolated accessibility audits
+ - Shadcn for accessible, reusable components
+ - Husky to run linting prior to Git Commit
+ - E2E testing across multiple browsers using Playwright
+
 <strong>Stacks & Tools</strong>
 <br>
 <br>
