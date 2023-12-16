@@ -1,42 +1,37 @@
-"use client";
+type IGPostType = {
+  id: number;
+  imgSrc: string;
+  imgAlt: string;
+};
 
-import { useEffect, useState } from "react";
-import { z } from "zod";
+type IGResponse = {
+  data: IGPostType[];
+};
 
-const iGFeedSchema = z.object({
-  id: z.number(),
-  imgSrc: z.string(),
-  imgAlt: z.string(),
-});
+export default async function Page() {
+  const getData = async (): Promise<IGResponse> => {
+    const res = await fetch("https://vespi-fashion.vercel.app/api/IG");
 
-type IGFeed = z.infer<typeof iGFeedSchema>;
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
 
-export default function IGFeed() {
-  const [validatedPosts, setValidatedPosts] = useState<IGFeed[]>([]);
+    return res.json();
+  };
 
-  useEffect(() => {
-    fetch("https://vespi-fashion.com/api/IG*")
-      .then((res) => res.json())
-      .then((post: unknown) => {
-        const validatedData = iGFeedSchema.array().safeParse(post);
-
-        if (!validatedData.success) {
-          console.error(validatedData.error);
-          return;
-        }
-
-        setValidatedPosts(validatedData.data);
-        console.log(validatedData.data);
-      });
-  }, []);
-
-  return (
-    <div>
-      {validatedPosts.map((post) => (
-        <ul key={post.id}>
-          <li>{post.imgSrc}</li>
-        </ul>
-      ))}
-    </div>
-  );
+  try {
+    const posts = await getData();
+    return (
+      <main>
+        {posts.data.map((post) => (
+          <ul key={post.id}>
+            <li>{post.imgSrc}</li>
+          </ul>
+        ))}
+      </main>
+    );
+  } catch (error) {
+    console.error("Error fetching data:");
+    return <main>Error fetching data</main>;
+  }
 }

@@ -21,7 +21,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const IGFeedSlider: Story = {
-  parameters: {
+  /*  parameters: {
     msw: {
       handlers: [
         http.get("https://vespi-fashion.com/api/IG*", () =>
@@ -29,5 +29,5 @@ export const IGFeedSlider: Story = {
         ),
       ],
     },
-  },
+  }, */
 };
