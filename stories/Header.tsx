@@ -19,6 +19,7 @@ import Image from "next/image";
 import { formatCurrency } from "@/utils/formatCurrency";
 import ShoppingCart from "@/components/ShoppingCart";
 import { useEffect, useState } from "react";
+import Search from "@/components/Search";
 
 type Status = {
   status: string;
@@ -346,39 +347,7 @@ export const Header = ({
       )}
 
       <div className="flex items-center gap-8 header-right">
-        <Button
-          className="hidden lg:block search bg-transparent hover:bg-transparent rounded-none border border-transparent hover:border-black transition"
-          aria-labelledby="search-label"
-        >
-          <span id="search-label" hidden>
-            Search
-          </span>
-          <svg
-            aria-hidden="true"
-            focusable="false"
-            width="15"
-            height="17"
-            viewBox="0 0 15 17"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="6.5"
-              cy="7.5"
-              r="5.75"
-              stroke="black"
-              stroke-width="1.5"
-            />
-            <line
-              y1="-0.75"
-              x2="5.21116"
-              y2="-0.75"
-              transform="matrix(0.697461 0.716622 -0.697461 0.716622 10 13)"
-              stroke="black"
-              stroke-width="1.5"
-            />
-          </svg>
-        </Button>
+        <Search />
         <svg
           className="hidden lg:block"
           width="1"
