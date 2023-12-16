@@ -21,3 +21,8 @@ A refined, luxury Mens and Womens fashion store and lifestyle journal built as a
 <a target="_blank" rel="noopener noreferrer" href="https://playwright.dev/img/playwright-logo.svg"><img src="https://playwright.dev/img/playwright-logo.svg" alt="Playwright logo" width="50" height="50" style="max-width:100%;"></a>
 <a target="_blank" rel="noopener noreferrer" href="https://avatars.githubusercontent.com/u/53986236?s=280&v=4"><img src="https://avatars.githubusercontent.com/u/53986236?s=280&v=4" alt="React Hook Form logo" width="50" height="50" style="max-width:100%;"></a>
 <a target="_blank" rel="noopener noreferrer" href="https://zod.dev/logo.svg"><img src="https://zod.dev/logo.svg" alt="Zod logo" width="50" height="50" style="max-width:100%;"></a>
+
+<strong>Disclaimed</strong>
+<br>
+<br>
+All trademarks and assets belong to their respective owners and are used solely for demonstration purposes. The use of such does not imply ownership or endorsement. This website is under non-commercial, personal use and no orders will be fulfilled.
