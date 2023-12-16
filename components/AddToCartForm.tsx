@@ -1,6 +1,5 @@
 "use client";
 
-import { pt_serif } from "@/lib/types";
 import {
   Form,
   FormControl,
@@ -75,17 +74,14 @@ export const AddToCartForm = ({
           name="quantity"
           render={({ field }) => (
             <FormItem>
-              <FormLabel id="quantity-label" className={pt_serif.className}>
+              <FormLabel id="quantity-label" className="font-serif">
                 Choose Quantity
               </FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger
                     aria-labelledby="quantity-label"
-                    className={[
-                      "rounded-none border border-black input-style",
-                      pt_serif.className,
-                    ].join(" ")}
+                    className="rounded-none border border-black input-style font-serif"
                   >
                     <SelectValue placeholder={field.value}></SelectValue>
                   </SelectTrigger>
@@ -96,9 +92,7 @@ export const AddToCartForm = ({
                       <SelectItem
                         key={index}
                         value={quantity.toString()}
-                        className={["cursor-pointer", pt_serif.className].join(
-                          " "
-                        )}
+                        className="cursor-pointer font-serif"
                       >
                         {quantity}
                       </SelectItem>
@@ -124,10 +118,7 @@ export const AddToCartForm = ({
                   {itemSize.map((size) => (
                     <FormItem key={size}>
                       <FormControl>
-                        <RadioGroupItem
-                          className="!appearance-none"
-                          value={size}
-                        />
+                        <RadioGroupItem value={size} />
                       </FormControl>
                       <FormLabel>{size}</FormLabel>
                     </FormItem>
