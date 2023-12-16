@@ -3,16 +3,24 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
+import { SearchProps } from "@/utils/types";
 
-export default function Search() {
+export default function Search({
+  buttonClassName,
+  ariaLabelledBy,
+  spanID,
+}: SearchProps) {
   return (
     <Popover>
       <PopoverTrigger asChild>
         <Button
-          className="hidden lg:block search bg-transparent hover:bg-transparent rounded-none border border-transparent hover:border-black transition"
-          aria-labelledby="search-label"
+          className={[
+            buttonClassName,
+            "search bg-transparent hover:bg-transparent rounded-none border border-transparent hover:border-black transition",
+          ].join(" ")}
+          aria-labelledby={ariaLabelledBy}
         >
-          <span id="search-label" hidden>
+          <span id={spanID} hidden>
             Search
           </span>
           <svg

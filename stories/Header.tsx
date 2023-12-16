@@ -143,7 +143,12 @@ export const Header = ({
                 </nav>
               </SheetContent>
             </Sheet>
-            <Button
+            <Search
+              buttonClassName="block lg:hidden"
+              ariaLabelledBy="mobile-search-label"
+              spanID="mobile-search-label"
+            />
+            {/*  <Button
               className="block lg:hidden search bg-transparent hover:bg-transparent"
               aria-labelledby="mobile-search-label"
             >
@@ -175,7 +180,7 @@ export const Header = ({
                   stroke-width="1.5"
                 />
               </svg>
-            </Button>
+            </Button> */}
           </div>
           <div className="flex header-left">
             <svg
@@ -276,7 +281,12 @@ export const Header = ({
                 </nav>
               </SheetContent>
             </Sheet>
-            <Button
+            <Search
+              buttonClassName="block lg:hidden"
+              ariaLabelledBy="mobile-search-label"
+              spanID="mobile-search-label"
+            />
+            {/*  <Button
               className="block lg:hidden search bg-transparent hover:bg-transparent"
               aria-labelledby="mobile-search-label"
             >
@@ -308,7 +318,7 @@ export const Header = ({
                   stroke-width="1.5"
                 />
               </svg>
-            </Button>
+            </Button> */}
           </div>
           <div className="flex lg:justify-between lg:max-w-[40rem] lg:w-full header-left">
             <svg
@@ -347,7 +357,11 @@ export const Header = ({
       )}
 
       <div className="flex items-center gap-8 header-right">
-        <Search />
+        <Search
+          buttonClassName="hidden lg:block"
+          ariaLabelledBy="search-label"
+          spanID="search-label"
+        />
         <svg
           className="hidden lg:block"
           width="1"
