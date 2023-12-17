@@ -10,14 +10,14 @@ import { antonio, chakra_petch, roboto_condensed, unna } from "@/lib/types";
 
 export default function HomePageCarousel() {
   const [direction, setDirection] = useState("");
-  const [wheel, setWheel] = useState(false);
+  // const [wheel, setWheel] = useState(false);
 
   useEffect(() => {
     function handleResize() {
       const newDirection = window.innerWidth < 768 ? "ltr" : "ttb";
-      const wheelInteraction = window.innerWidth > 768;
+      // const wheelInteraction = window.innerWidth < 768;
       setDirection(newDirection);
-      setWheel(wheelInteraction);
+      // setWheel(wheelInteraction);
     }
 
     window.addEventListener("resize", handleResize);
@@ -38,7 +38,7 @@ export default function HomePageCarousel() {
           height: "100dvh",
           direction: direction,
           paginationDirection: direction,
-          wheel: wheel,
+          wheel: true,
         }}
       >
         <SplideSlide className="grid grid-rows-1 md:grid-cols-2 items-stretch justify-items-center md:justify-items-start">
@@ -97,8 +97,8 @@ export default function HomePageCarousel() {
             alt="image"
             height={1200}
             width={960}
-            className="hidden lg:block order-2"
-            style={{ height: "100%", objectFit: "cover", width: "100%" }}
+            className="hidden lg:block order-2 p-16 bg-[#f1eadc]"
+            style={{ height: "100%", objectFit: "contain", width: "100%" }}
           />
           <Image
             priority
