@@ -45,6 +45,7 @@ export default function HomePageCarousel() {
           direction: direction,
           paginationDirection: direction,
           wheel: true,
+          waitForTransition: true,
         }}
       >
         <SplideSlide className="grid grid-rows-1 md:grid-cols-2 items-stretch justify-items-center md:justify-items-start">
