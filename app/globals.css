@@ -76,3 +76,12 @@ button {
   cursor: pointer;
   height: 3.75rem;
 }
+
+.press-quote {
+  font-family: "PT Serif", serif;
+  font-size: clamp(1.625rem, 1.5179rem + 0.5357vw, 2.375rem);
+  max-width: 52.5625rem;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
