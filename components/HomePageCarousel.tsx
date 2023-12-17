@@ -6,7 +6,13 @@ import "@splidejs/react-splide/css";
 // @ts-ignore - temporarily added to ignore missing declarations file
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { useEffect, useState } from "react";
-import { antonio, chakra_petch, roboto_condensed, unna } from "@/lib/types";
+import {
+  antonio,
+  chakra_petch,
+  pt_serif,
+  roboto_condensed,
+  unna,
+} from "@/lib/types";
 
 export default function HomePageCarousel() {
   const [direction, setDirection] = useState("");
@@ -43,12 +49,17 @@ export default function HomePageCarousel() {
       >
         <SplideSlide className="grid grid-rows-1 md:grid-cols-2 items-stretch justify-items-center md:justify-items-start">
           <div className="max-w-[28rem] w-full flex flex-col items-center lg:items-start text-center lg:text-left justify-center lg:justify-end order-2 md:order-1 py-6 lg:h-[100vh] lg:pl-16 p-6">
-            <p className="uppercase font-serif text-[0.8125rem] mb-4">
+            <p
+              className={[
+                "uppercase font-serif text-[0.8125rem] mb-4",
+                pt_serif.className,
+              ].join(" ")}
+            >
               Sebastian <span className="font-sans mx-3">&times;</span>Takagawa
             </p>
             <h2 className="heading-2">Elegance & Comfort</h2>
             <div className="flex flex-col items-center lg:items-start gap-5 md:gap-10">
-              <p className="font-serif text-[#6a6161]">
+              <p className={["text-[#6a6161]", pt_serif.className].join(" ")}>
                 Our new range of overcoats, made from 100%
                 <span className="italic">&#32; cashmere</span>, ethically
                 sourced and without the price tag of old fashion houses.
