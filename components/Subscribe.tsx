@@ -80,11 +80,11 @@ export default function Subscribe() {
             )}
           />
           <Button
-            className="bg-transparent hover:bg-transparent rounded-none absolute right-[.3125rem] top-2"
-            aria-labelledby="submit-email"
+            className="bg-transparent hover:bg-transparent rounded-none absolute right-[.3125rem] top-4"
+            aria-labelledby="submit-email-label"
             type="submit"
           >
-            <span id="submit-email" hidden>
+            <span id="submit-email-label" hidden>
               Submit Email
             </span>
             <svg
