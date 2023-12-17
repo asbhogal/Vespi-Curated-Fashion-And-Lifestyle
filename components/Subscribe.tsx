@@ -14,9 +14,12 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { lato } from "@/lib/types";
 
 const formSchema = z.object({
-  email: z.string().email({ message: "Invalid email address" }),
+  email: z
+    .string()
+    .email({ message: "⋅ Please provide a valid email address" }),
 });
 
 function onSubmit(values: z.infer<typeof formSchema>) {
@@ -76,6 +79,11 @@ export default function Subscribe() {
                     {...field}
                   />
                 </FormControl>
+                <FormMessage
+                  className={["font-semibold text-sm", lato.className].join(
+                    " "
+                  )}
+                />
               </FormItem>
             )}
           />
