@@ -14,7 +14,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { lato } from "@/lib/types";
+import { lato, pt_serif } from "@/lib/types";
 
 const formSchema = z.object({
   email: z
@@ -74,7 +74,10 @@ export default function Subscribe() {
                 <FormLabel className="sr-only">Email Address</FormLabel>
                 <FormControl>
                   <Input
-                    className="max-w-80 w-full h-[3.625rem] rounded-none border border-black placeholder:text-black placeholder:text-[1.0625rem] placeholder:font-serif"
+                    className={[
+                      "max-w-80 w-full h-[3.625rem] rounded-none border border-black text-[1.0625rem] placeholder:text-black placeholder:text-[1.0625rem] placeholder:font-serif",
+                      pt_serif.className,
+                    ].join(" ")}
                     placeholder="Your email"
                     {...field}
                   />
