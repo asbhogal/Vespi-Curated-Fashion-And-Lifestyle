@@ -88,6 +88,8 @@ export default function Subscribe() {
               Submit Email
             </span>
             <svg
+              aria-hidden="true"
+              focusable="false"
               width="12"
               height="7"
               viewBox="0 0 12 7"
