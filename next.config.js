@@ -5,6 +5,7 @@ const nextConfig = {
       "app",
       "utils",
       "components",
+      "ui",
       "stories",
       "lib",
       ".storybook",
