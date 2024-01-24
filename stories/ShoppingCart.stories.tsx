@@ -20,5 +20,5 @@ export const ShoppingBag: Story = (args: ShoppingCartProps) => (
 );
 
 ShoppingBag.args = {
-  defaultLayout: true, // or provide the initial value you want
+  defaultLayout: true,
 };

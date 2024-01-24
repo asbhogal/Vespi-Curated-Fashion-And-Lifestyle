@@ -13,14 +13,13 @@ const config: StorybookConfig = {
   features: {
     experimentalNextRSC: true,
   },
+  staticDirs: ["../public"],
   addons: [
     "@storybook/addon-a11y",
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
-    "msw-storybook-addon",
-    "storybook-addon-module-mock",
   ],
   staticDirs: ["../public"],
   async webpackFinal(config, { configType }) {

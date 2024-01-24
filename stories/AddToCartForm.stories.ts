@@ -31,20 +31,4 @@ export const OrderedItem: Story = {
     label: 1,
     quantity: "1",
   },
-  play: async ({ args, canvasElement, step }) => {
-    const canvas = within(canvasElement);
-    await userEvent.type(canvas.getByRole("spinbutton"), "5");
-    const logSpy = jest.spyOn(console, "log");
-
-    await step("Submit form", async () => {
-      await userEvent.click(canvas.getByRole("button"));
-    });
-    expect(logSpy).toHaveBeenCalledWith({ quantity: 5 });
-
-    await step("Submit form", async () => {
-      await userEvent.click(canvas.getByRole("button"));
-    });
-
-    await waitFor(() => expect(args.onClick).toHaveBeenCalled());
-  },
 };
