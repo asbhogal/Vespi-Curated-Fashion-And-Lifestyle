@@ -17,7 +17,6 @@ import {
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { toast } from "@/components/ui/use-toast";
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -60,9 +59,6 @@ export const AddToCartForm = ({
   });
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
-    toast({
-      title: "Item added to bag",
-    });
     console.log(parseInt(data.quantity), data.type);
   }
 
