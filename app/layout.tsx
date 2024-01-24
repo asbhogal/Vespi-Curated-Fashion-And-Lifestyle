@@ -15,7 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${lato.variable} ${pt_serif.variable}`}>
-      <body>{children}</body>
+      <body><main>
+      {children}
+      </main></body>
     </html>
   );
 }

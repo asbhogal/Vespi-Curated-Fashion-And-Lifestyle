@@ -4,7 +4,7 @@ import Image from "next/image";
 import "@splidejs/react-splide/css";
 
 // @ts-ignore - temporarily added to ignore missing declarations file
-import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { Splide } from "@splidejs/react-splide";
 import { useEffect, useState } from "react";
 import {
   antonio,
@@ -34,7 +34,7 @@ export default function HomePageCarousel() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
+    <div className="flex min-h-screen flex-col items-center justify-between">
       <Splide
         className="max-w-[160rem] w-full"
         options={{
@@ -48,7 +48,7 @@ export default function HomePageCarousel() {
           waitForTransition: true,
         }}
       >
-        <SplideSlide className="grid grid-rows-1 md:grid-cols-2 items-stretch justify-items-center md:justify-items-start">
+        <div className="splide__slide grid grid-rows-1 md:grid-cols-2 items-stretch justify-items-center md:justify-items-start">
           <div className="max-w-[28rem] w-full flex flex-col items-center lg:items-start text-center lg:text-left justify-center lg:justify-end order-2 md:order-1 py-6 lg:h-[100vh] lg:pl-16 p-6">
             <p
               className={[
@@ -121,8 +121,8 @@ export default function HomePageCarousel() {
             className="block lg:hidden order-1"
             style={{ height: "100%", objectFit: "contain", width: "100%" }}
           />
-        </SplideSlide>
-        <SplideSlide className="grid grid-rows-1 md:grid-cols-2 items-stretch justify-items-center md:justify-items-start">
+        </div>
+        <div className="splide__slide grid grid-rows-1 md:grid-cols-2 items-stretch justify-items-center md:justify-items-start">
           <div className="max-w-[28rem] w-full flex flex-col items-center md:items-start text-center lg:text-left justify-center lg:justify-end order-2 md:order-1 py-6 md:h-[100vh] lg:pl-16 p-6">
             <h2
               className={[
@@ -194,8 +194,8 @@ export default function HomePageCarousel() {
             className="block lg:hidden order-1"
             style={{ height: "100%", objectFit: "contain", width: "100%" }}
           />
-        </SplideSlide>
-        <SplideSlide className="grid grid-rows-1 md:grid-cols-2 items-stretch justify-items-center md:justify-items-start">
+        </div>
+        <div className="splide__slide grid grid-rows-1 md:grid-cols-2 items-stretch justify-items-center md:justify-items-start">
           <div className="max-w-[28rem] w-full flex flex-col items-center md:items-start text-center lg:text-left justify-center lg:justify-end order-2 md:order-1 py-6 md:h-[100vh] lg:pl-16 p-6">
             <h2
               className={[
@@ -267,8 +267,8 @@ export default function HomePageCarousel() {
             className="block lg:hidden order-1"
             style={{ height: "100%", objectFit: "contain", width: "100%" }}
           />
-        </SplideSlide>
-        <SplideSlide className="grid grid-rows-1 md:grid-cols-2 items-stretch justify-items-center md:justify-items-start">
+        </div>
+        <div className="splide__slide grid grid-rows-1 md:grid-cols-2 items-stretch justify-items-center md:justify-items-start">
           <div className="max-w-[28rem] w-full flex flex-col items-center md:items-start text-center lg:text-left justify-center lg:justify-end order-2 md:order-1 py-6 md:h-[100vh] lg:pl-16 p-6">
             <h2
               className={[
@@ -340,8 +340,8 @@ export default function HomePageCarousel() {
             className="block lg:hidden order-1"
             style={{ height: "100%", objectFit: "contain", width: "100%" }}
           />
-        </SplideSlide>
-        <SplideSlide className="grid grid-rows-1 md:grid-cols-2 items-stretch justify-items-center md:justify-items-start">
+        </div>
+        <div className="splide__slide grid grid-rows-1 md:grid-cols-2 items-stretch justify-items-center md:justify-items-start">
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left justify-center lg:justify-end order-2 md:order-1 py-6 md:h-[100vh] lg:pl-16 p-6">
             <h2
               className={[
@@ -413,8 +413,8 @@ export default function HomePageCarousel() {
             className="block lg:hidden order-1"
             style={{ height: "100%", objectFit: "contain", width: "100%" }}
           />
-        </SplideSlide>
+        </div>
       </Splide>
-    </main>
+    </div>
   );
 }
