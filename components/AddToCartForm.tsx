@@ -6,6 +6,7 @@ import {
   FormField,
   FormItem,
   FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 import {
   Select,
@@ -21,6 +22,8 @@ import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Buttons } from "./Button";
+import { toast } from "sonner"
+
 
 interface AddToCartProps {
   size?: "small" | "medium" | "large";
@@ -39,7 +42,7 @@ const FormSchema = z.object({
       message: "Please enter quantity",
     })
     .max(10),
-  type: z.enum(["s", "m", "l"], {
+  size: z.enum(["s", "m", "l"], {
     required_error: "Please select a size",
   }),
 });
@@ -52,38 +55,38 @@ export const AddToCartForm = ({
 }: AddToCartProps) => {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
+    mode: "onChange",
     defaultValues: {
       quantity: "1",
-      type: undefined,
+      size: "s",
     },
   });
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
-    console.log(parseInt(data.quantity), data.type);
+    console.log(data);
+    toast("Added to cart")
   }
 
   return (
     <Form {...form}>
-      <form id="add-to-cart" onSubmit={form.handleSubmit(onSubmit)}>
+      <form onSubmit={form.handleSubmit(onSubmit)}>
         <FormField
           control={form.control}
           name="quantity"
           render={({ field }) => (
             <FormItem>
-              <FormLabel id="quantity-label" className="font-serif">
+              <FormLabel className="font-serif form-label">
                 Choose Quantity
               </FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger
-                    aria-labelledby="quantity-label"
                     className="rounded-none border border-black input-style font-serif"
                   >
                     <SelectValue placeholder={field.value}></SelectValue>
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent className="rounded-none">
-                  <SelectGroup>
                     {itemQuantity.map((quantity, index) => (
                       <SelectItem
                         key={index}
@@ -93,39 +96,40 @@ export const AddToCartForm = ({
                         {quantity}
                       </SelectItem>
                     ))}
-                  </SelectGroup>
                 </SelectContent>
               </Select>
+              <FormMessage />
             </FormItem>
           )}
         />
-
         <FormField
           control={form.control}
-          name="type"
+          name="size"
           render={({ field }) => (
             <FormItem>
+              <FormLabel className="sr-only">Select a size</FormLabel>
               <FormControl>
                 <RadioGroup
                   onValueChange={field.onChange}
                   defaultValue={field.value}
-                  className="flex"
+                  className="flex radio-group"
                 >
                   {itemSize.map((size) => (
                     <FormItem key={size}>
-                      <FormControl>
-                        <RadioGroupItem value={size} />
+                      <FormControl className="radio-group-item">
+                        <RadioGroupItem value={size} aria-label={size} className="radio-button-indicator" />
                       </FormControl>
                       <FormLabel>{size}</FormLabel>
                     </FormItem>
                   ))}
                 </RadioGroup>
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
-      </form>
       <Buttons id="add-to-cart" primary type="submit" label="Add To Bag" />
+      </form>
     </Form>
   );
 };

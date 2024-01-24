@@ -1,6 +1,7 @@
 import { lato, pt_serif } from "@/lib/types";
 import type { Metadata } from "next";
 import "./globals.css";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Vespi | Curated Luxury Fashion & Lifestyle",
@@ -17,7 +18,7 @@ export default function RootLayout({
     <html lang="en" className={`${lato.variable} ${pt_serif.variable}`}>
       <body><main>
       {children}
-      </main></body>
+      </main><Toaster /></body>
     </html>
   );
 }
