@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "playwright test --ui",
     "prepare": "husky install",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -36,7 +37,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@playwright/test": "^1.41.0",
+    "@playwright/test": "^1.41.1",
     "@storybook/addon-a11y": "^7.6.10",
     "@storybook/addon-essentials": "^7.6.10",
     "@storybook/addon-interactions": "^7.6.10",
