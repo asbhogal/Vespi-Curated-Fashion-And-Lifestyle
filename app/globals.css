@@ -57,6 +57,13 @@
   span[data-state="checked"] {
     display: none;
   }
+
+  .size-label {
+    position: absolute;
+    top:5%;
+    left: 50%;
+    transform: translate(-50%, 45%)
+  }
 }
 
 /* input[type="radio"]::before {

@@ -35,7 +35,7 @@ interface AddToCartProps {
 }
 const itemQuantity: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-const itemSize: string[] = ["s", "m", "l"];
+const itemSize: string[] = ["xs", "s", "m", "l"];
 
 const FormSchema = z.object({
   quantity: z
@@ -44,7 +44,7 @@ const FormSchema = z.object({
       message: "Please enter quantity",
     })
     .max(10),
-  size: z.enum(["s", "m", "l"], {
+  size: z.enum(["xs", "s", "m", "l"], {
     required_error: "Please select a size",
   }),
 });
@@ -121,7 +121,7 @@ export const AddToCartForm = ({
                       <FormControl className="radio-group-item">
                 <RadioGroupItem value={size} aria-label={size} className={`radio-button-indicator h-12 w-12 border border-platinum ${field.value === size ? 'selected' : ''}`} />
                       </FormControl>
-                      <FormLabel className="absolute left-2/4 -translate-x-1/2 translate-y-1/2 uppercase font-sans font-bold">{size}</FormLabel>
+                      <FormLabel className="size-label uppercase font-sans font-bold">{size}</FormLabel>
                     </FormItem>
                   ))}
                 </RadioGroup>
