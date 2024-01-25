@@ -81,9 +81,9 @@ export const AddToCartForm = ({
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger
-                    className="rounded-none border border-black input-style font-serif"
+                    className="rounded-none border border-black input-style font-serif" aria-label="Select quantity"
                   >
-                    <SelectValue placeholder={field.value}></SelectValue>
+                    <SelectValue placeholder={field.value} />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent className="rounded-none">
