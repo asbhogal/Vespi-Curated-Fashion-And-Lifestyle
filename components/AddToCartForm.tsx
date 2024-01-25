@@ -3,6 +3,7 @@
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -23,6 +24,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Buttons } from "./Button";
 import { toast } from "sonner"
+import Link from "next/link";
 
 
 interface AddToCartProps {
@@ -69,7 +71,7 @@ export const AddToCartForm = ({
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)}>
+      <form className="flex flex-col gap-4" onSubmit={form.handleSubmit(onSubmit)}>
         <FormField
           control={form.control}
           name="quantity"
@@ -107,7 +109,7 @@ export const AddToCartForm = ({
           name="size"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="sr-only">Select a size</FormLabel>
+              <FormLabel className="font-serif form-label">Choose Size</FormLabel>
               <FormControl>
                 <RadioGroup
                   onValueChange={field.onChange}
@@ -115,15 +117,16 @@ export const AddToCartForm = ({
                   className="flex radio-group"
                 >
                   {itemSize.map((size) => (
-                    <FormItem key={size}>
+                    <FormItem key={size} className="relative">
                       <FormControl className="radio-group-item">
-                        <RadioGroupItem value={size} aria-label={size} className="radio-button-indicator" />
+                <RadioGroupItem value={size} aria-label={size} className={`radio-button-indicator h-12 w-12 border border-platinum ${field.value === size ? 'selected' : ''}`} />
                       </FormControl>
-                      <FormLabel>{size}</FormLabel>
+                      <FormLabel className="absolute left-2/4 -translate-x-1/2 translate-y-1/2 uppercase font-sans font-bold">{size}</FormLabel>
                     </FormItem>
                   ))}
                 </RadioGroup>
               </FormControl>
+              <FormDescription className="font-serif">Unsure? Check our <Link href="/#" className="underline">sizing guide</Link></FormDescription>
               <FormMessage />
             </FormItem>
           )}
