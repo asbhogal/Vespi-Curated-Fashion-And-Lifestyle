@@ -1,9 +1,13 @@
+"use client";
+
 // @ts-ignore
-import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { Splide } from "@splidejs/react-splide";
 import Image from "next/image";
 import "@splidejs/react-splide/css";
 import { Buttons } from "./Button";
 import { pt_serif } from "@/lib/types";
+import useSWR from "swr";
+import { fetcher } from "@/lib/functions/fetcher";
 
 type IGPostType = {
   id: number;
@@ -15,19 +19,10 @@ type IGResponse = {
   data: IGPostType[];
 };
 
-export default async function Page() {
-  const getData = async (): Promise<IGResponse> => {
-    const res = await fetch("https://vespi-fashion.vercel.app/api/IG");
+export default function Page() {
 
-    if (!res.ok) {
-      throw new Error("Failed to fetch data");
-    }
+  const {data:posts, error, isLoading} = useSWR<IGResponse>("https://vespi-fashion.vercel.app/api/IG", fetcher)
 
-    return res.json();
-  };
-
-  try {
-    const posts = await getData();
     return (
       <div className="grid gap-8 overflow-hidden">
         <div className="flex justify-between">
@@ -60,16 +55,16 @@ export default async function Page() {
             }}
             aria-label="instagram posts"
           >
-            {posts.data.map((post) => (
-              <SplideSlide key={post.id}>
-                <Image
-                  src={`/images/IGPost-${post.imgSrc}`}
-                  alt={post.imgSrc}
-                  width={200}
-                  height={200}
-                />
-              </SplideSlide>
-            ))}
+             {isLoading ? (<p>Loading posts</p>) : (error ? (<p>Error fetching posts</p>) : (posts?.data.map((post) => (
+          <div key={post.id} className="splide__slide">
+            <Image
+              src={`/images/IGPost-${post.imgSrc}`}
+              alt={post.imgSrc}
+              width={200}
+              height={200}
+            />
+          </div>
+        ))))}
           </Splide>
         </section>
         <Buttons
@@ -79,8 +74,4 @@ export default async function Page() {
         />
       </div>
     );
-  } catch (error) {
-    console.error("Error fetching data:");
-    return <main>Error fetching data</main>;
-  }
 }
