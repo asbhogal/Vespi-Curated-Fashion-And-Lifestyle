@@ -44,3 +44,10 @@ export const unna = Unna({
   variable: "--font-unna",
   display: "swap",
 });
+
+export interface AddToCartProps {
+  size?: "small" | "medium" | "large";
+  label: number;
+  quantity: string;
+  onClick?: () => void;
+}

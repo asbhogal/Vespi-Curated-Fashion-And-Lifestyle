@@ -12,12 +12,10 @@ import {
 import {
   Select,
   SelectContent,
-  SelectGroup,
   SelectItem,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import * as z from "zod";
 import { useForm } from "react-hook-form";
@@ -25,29 +23,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Buttons } from "./Button";
 import { toast } from "sonner"
 import Link from "next/link";
+import { FormSchema } from "@/lib/schemas";
+import { AddToCartProps } from "@/lib/types";
 
-
-interface AddToCartProps {
-  size?: "small" | "medium" | "large";
-  label: number;
-  quantity: string;
-  onClick?: () => void;
-}
 const itemQuantity: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const itemSize: string[] = ["xs", "s", "m", "l"];
-
-const FormSchema = z.object({
-  quantity: z
-    .string()
-    .min(1, {
-      message: "Please enter quantity",
-    })
-    .max(10),
-  size: z.enum(["xs", "s", "m", "l"], {
-    required_error: "Please select a size",
-  }),
-});
 
 export const AddToCartForm = ({
   size = "medium",
