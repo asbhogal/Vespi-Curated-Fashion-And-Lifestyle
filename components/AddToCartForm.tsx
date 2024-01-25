@@ -23,8 +23,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Buttons } from "./Button";
 import { toast } from "sonner"
 import Link from "next/link";
-import { FormSchema } from "@/lib/schemas";
 import { AddToCartProps } from "@/lib/types";
+import { addProductFormSchema } from "@/lib/schemas";
 
 const itemQuantity: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -36,8 +36,8 @@ export const AddToCartForm = ({
   quantity,
   ...props
 }: AddToCartProps) => {
-  const form = useForm<z.infer<typeof FormSchema>>({
-    resolver: zodResolver(FormSchema),
+  const form = useForm<z.infer<typeof addProductFormSchema>>({
+    resolver: zodResolver(addProductFormSchema),
     mode: "onChange",
     defaultValues: {
       quantity: "1",
@@ -45,7 +45,7 @@ export const AddToCartForm = ({
     },
   });
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
+  function onSubmit(data: z.infer<typeof addProductFormSchema>) {
     console.log(data);
     toast("Added to cart")
   }

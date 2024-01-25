@@ -15,19 +15,14 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { lato, pt_serif } from "@/lib/types";
+import { emailFormSchema } from "@/lib/schemas";
 
-const formSchema = z.object({
-  email: z
-    .string()
-    .email({ message: "⋅ Please provide a valid email address" }),
-});
-
-function onSubmit(values: z.infer<typeof formSchema>) {
+function onSubmit(values: z.infer<typeof emailFormSchema>) {
   console.log(values);
 }
 export default function Subscribe() {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<typeof emailFormSchema>>({
+    resolver: zodResolver(emailFormSchema),
     defaultValues: {
       email: "",
     },

@@ -1,6 +1,12 @@
 import * as z from "zod";
 
-export const FormSchema = z.object({
+export const emailFormSchema = z.object({
+  email: z
+    .string()
+    .email({ message: "⋅ Please provide a valid email address" }),
+});
+
+export const addProductFormSchema = z.object({
   quantity: z
     .string()
     .min(1, {
