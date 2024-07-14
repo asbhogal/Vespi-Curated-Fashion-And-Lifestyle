@@ -1,6 +1,19 @@
 {
+  "rules": { "@next/next/no-img-element": "off" },
   "extends": [
     "next/core-web-vitals",
+    "prettier",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
     "plugin:storybook/recommended"
-  ]
+  ],
+  "settings": {
+    "jsx-a11y/strict": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "prettier"]
 }

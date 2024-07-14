@@ -35,19 +35,11 @@ const menu: MenuType[] = [
   },
 ];
 
-function onLogin() {
-  console.log("Logged in");
-}
-
-function onLogout() {
-  console.log("Logged out");
-}
-
 export const Header = ({
   status,
   onLogin,
   onLogout,
-  onCreateAccount,
+  // onCreateAccount,
   defaultLayout,
 }: HeaderProps) => {
   return (

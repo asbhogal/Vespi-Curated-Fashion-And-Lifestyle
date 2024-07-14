@@ -16,7 +16,7 @@ export const Page: React.FC = () => {
         defaultLayout
         status={"Status"}
         onLogin={() => setUser({ name: "Jane Doe" })}
-        onLogout={() => setUser(undefined)}
+        onLogout={() => setUser(user)}
         onCreateAccount={() => setUser({ name: "Jane Doe" })}
       />
 

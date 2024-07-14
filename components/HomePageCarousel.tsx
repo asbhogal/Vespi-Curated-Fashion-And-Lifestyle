@@ -3,7 +3,7 @@
 import Image from "next/image";
 import "@splidejs/react-splide/css";
 
-// @ts-ignore - temporarily added to ignore missing declarations file
+// @ts-expect-error - temporarily added to ignore missing declarations file
 import { Splide } from "@splidejs/react-splide";
 import { useEffect, useState } from "react";
 import {

@@ -19,7 +19,7 @@ const config = {
     extend: {
       colors: {
         whiteChocolate: "#ebe5da",
-        platinum: "#e6e6e6"
+        platinum: "#e6e6e6",
       },
       fontFamily: {
         sans: ["Lato"],

@@ -8,7 +8,6 @@ import { Input } from "./ui/input";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -79,7 +78,7 @@ export default function Subscribe() {
                 </FormControl>
                 <FormMessage
                   className={["font-semibold text-sm", lato.className].join(
-                    " "
+                    " ",
                   )}
                 />
               </FormItem>

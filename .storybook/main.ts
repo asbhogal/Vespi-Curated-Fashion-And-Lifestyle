@@ -11,6 +11,7 @@ const config: StorybookConfig = {
     "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
   features: {
+    // @ts-expect-error update storybook.config.js to use experimental features
     experimentalNextRSC: true,
   },
   staticDirs: ["../public"],
@@ -21,8 +22,7 @@ const config: StorybookConfig = {
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
   ],
-  staticDirs: ["../public"],
-  async webpackFinal(config, { configType }) {
+  async webpackFinal(config) {
     if (config?.resolve?.alias) {
       config.resolve.alias = {
         ...config.resolve.alias,

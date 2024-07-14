@@ -1,15 +1,6 @@
 "use client";
 
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetDescription,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Image from "next/image";
 import { formatCurrency } from "@/utils/formatCurrency";
 import { pt_serif, lato } from "@/lib/types";

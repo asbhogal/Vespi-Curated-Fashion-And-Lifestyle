@@ -15,14 +15,14 @@ interface ButtonProps {
 }
 
 export const Buttons = ({
-  id,
+  // id,
   primary = false,
   size = "medium",
   backgroundColor,
   className,
   label,
   icon,
-  type,
+  // type,
   ...props
 }: ButtonProps) => {
   const mode = primary
@@ -31,6 +31,7 @@ export const Buttons = ({
 
   const specialClass = icon && "storybook-button--special";
   return (
+    // @ts-expect-error check types for button
     <Button
       className={[
         "h-[3.75rem] rounded-none transition font-bold storybook-button text-[0.8125rem]",
