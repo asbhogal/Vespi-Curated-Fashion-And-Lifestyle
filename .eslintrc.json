@@ -1,10 +1,14 @@
 {
-  "rules": { "@next/next/no-img-element": "off" },
+  "rules": {
+    "@next/next/no-img-element": "off"
+  },
   "extends": [
+    "@innovixx/eslint-config/configs/base",
+    "@innovixx/eslint-config/configs/react",
+    "@innovixx/eslint-config/configs/typescript",
     "next/core-web-vitals",
-    "prettier",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
+    "plugin:storybook/recommended",
+    "next/core-web-vitals",
     "plugin:storybook/recommended"
   ],
   "settings": {
@@ -15,5 +19,18 @@
     "ecmaVersion": 2020,
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "prettier"]
+  "plugins": [
+    "@typescript-eslint",
+    "prettier",
+    "react",
+    "react-hooks",
+    "sort-keys-fix"
+  ],
+  "ignorePatterns": [
+    "ui",
+    ".storybook",
+    "tailwind.config.ts",
+    "tests-examples",
+    ".next"
+  ]
 }

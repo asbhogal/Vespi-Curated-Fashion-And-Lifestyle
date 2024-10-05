@@ -1,20 +1,20 @@
 .storybook-page {
-  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-  padding: 3rem 1.25rem;
   margin: 0 auto;
-  max-width: 37.5rem;
+  padding: 48px 20px;
+  max-width: 600px;
   color: #333;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .storybook-page h2 {
-  font-weight: 700;
-  font-size: 2rem;
-  line-height: 1;
-  margin: 0 0 0.25rem;
   display: inline-block;
   vertical-align: top;
+  margin: 0 0 4px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1;
 }
 
 .storybook-page p {
@@ -22,46 +22,46 @@
 }
 
 .storybook-page a {
-  text-decoration: none;
   color: #1ea7fd;
+  text-decoration: none;
 }
 
 .storybook-page ul {
-  padding-left: 1.875rem;
   margin: 1em 0;
+  padding-left: 30px;
 }
 
 .storybook-page li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
 }
 
 .storybook-page .tip {
   display: inline-block;
-  border-radius: 1em;
-  font-size: 0.6875rem;
-  line-height: 0.75rem;
-  font-weight: 700;
-  background: #e7fdd8;
-  color: #66bf3c;
-  padding: 0.25rem 0.75rem;
-  margin-right: 0.625rem;
   vertical-align: top;
+  margin-right: 10px;
+  border-radius: 1em;
+  background: #e7fdd8;
+  padding: 4px 12px;
+  color: #66bf3c;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 12px;
 }
 
 .storybook-page .tip-wrapper {
-  font-size: 0.8125rem;
-  line-height: 1.25rem;
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 13px;
+  line-height: 20px;
 }
 
 .storybook-page .tip-wrapper svg {
   display: inline-block;
-  height: 0.75rem;
-  width: 0.75rem;
-  margin-right: 0.25rem;
   vertical-align: top;
-  margin-top: 0.1875rem;
+  margin-top: 3px;
+  margin-right: 4px;
+  width: 12px;
+  height: 12px;
 }
 
 .storybook-page .tip-wrapper svg path {
